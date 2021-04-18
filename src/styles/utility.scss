@@ -1,0 +1,11 @@
+$baseFontSize: 18px;
+
+//colors
+$pseudo-black: #303030;
+
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($baseFontSize)}rem;
+}

@@ -1,0 +1,19 @@
+@import "./../utility";
+
+nav {
+  a {
+    font-size: rem(16px);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 rem(15px);
+    height: 50px;
+    line-height: 50px;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
