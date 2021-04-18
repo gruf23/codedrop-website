@@ -1,7 +1,14 @@
 $baseFontSize: 18px;
 
+//grid sizes
+$base-content-width: 1440px;
+$column-width: 78px;
+$gutter-width: 24px;
+
 //colors
 $pseudo-black: #303030;
+$brand-blue:   #3175F2;
+$brand-orange: #FFC900;
 
 @function stripUnit($value) {
   @return $value / ($value * 0 + 1);

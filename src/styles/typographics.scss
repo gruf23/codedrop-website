@@ -1,3 +1,4 @@
+@import "utility";
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
 // font-family: 'Source Sans Pro', sans-serif;
 
@@ -9,4 +10,26 @@
   url('../assets/fonts/gilroy-bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
   url('../assets/fonts/gilroy-bold.ttf') format('truetype'), /* Safari, Android, iOS */
   url('../assets/fonts/gilroy-bold.svg#gilroy-bold') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gilroy-Bold', 'Gotham Pro', sans-serif;
+}
+
+h2 {
+  font-size: rem(48px);
+  line-height: rem(48px);
+  letter-spacing: rem(1.5px);
+  white-space: break-spaces;
+}
+
+h3 {
+  font-size: rem(32px);
+  line-height: rem(32px);
+  letter-spacing: rem(1px);
+  white-space: break-spaces;
+}
+
+p {
+  white-space: break-spaces;
 }

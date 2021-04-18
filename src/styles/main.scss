@@ -1,14 +1,26 @@
-@import "fonts";
+@import "typographics";
 @import "reset";
 @import "utility";
+
+@import "components/bg-shape";
 
 html {
   font-size: $baseFontSize;
 }
 body {
+  position: relative;
   background-image: radial-gradient(circle, #f0f0f0 1.5px, #ffffff 0);
   background-size: 47px 47px;
   font-family: 'Source Sans Pro', 'Roboto', sans-serif;
   color: $pseudo-black;
   letter-spacing: .5px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  padding-left: rem(10px);
+  padding-right: rem(10px);
+  margin-left: auto;
+  margin-right: auto;
 }
