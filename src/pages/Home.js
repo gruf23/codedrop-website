@@ -4,6 +4,12 @@ import upworkLogo from '../assets/graphics/Upwork-logo.svg';
 import topRatedBadge from '../assets/graphics/top-rated-badge.svg';
 import BgShape1 from '../components/bg-shapes/BgShape1';
 import { BigBlueButton, Link } from '../components/buttons';
+import ServiceBlock from '../components/capabilities/ServiceBlock';
+
+import dev from '../assets/graphics/service-block/dev.svg'
+import servers from '../assets/graphics/service-block/servers.svg'
+import support from '../assets/graphics/service-block/support.svg'
+import uiux from '../assets/graphics/service-block/uiux.svg'
 
 function HomePage() {
   return (
@@ -45,6 +51,38 @@ function HomePage() {
               <span>top rated plus</span>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="capabilities">
+        <div className="sub">capabilities</div>
+        <h2>We're The {'\n'}
+          Whole Package</h2>
+        <Link href={''}>Learn more</Link>
+        <div className="services">
+          <ServiceBlock
+            image={dev}
+            heading={'Development'}
+            sub={'Transform your buisness through technology'}
+            link={'#'}
+          />
+          <ServiceBlock
+            image={uiux}
+            heading={'Design'}
+            sub={'Elevate your user experience'}
+            link={'#'}
+          />
+          <ServiceBlock
+            image={servers}
+            heading={'Cloud & DevOps'}
+            sub={'Future-Proof and Scale Your Infrastructure'}
+            link={'#'}
+          />
+          <ServiceBlock
+            image={support}
+            heading={'Support'}
+            sub={'Keep Your Software Running At Its Best'}
+            link={'#'}
+          />
         </div>
       </section>
     </div>

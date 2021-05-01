@@ -14,6 +14,13 @@ section {
     letter-spacing: rem(.5px);
     line-height: rem(24px);
   }
+  .sub {
+    font-weight: 600;
+    color: rgba($pseudo-black, .7);
+    letter-spacing: rem(1.12px);
+    line-height: rem(23px);
+    text-transform: uppercase;
+  }
   &.first {
     width: 100%;
     max-width: 1440px;
@@ -102,11 +109,27 @@ section {
       }
     }
   }
-  .sub {
-    font-weight: 600;
-    color: rgba($pseudo-black, .7);
-    letter-spacing: rem(1.12px);
-    line-height: rem(23px);
-    text-transform: uppercase;
+  &.capabilities {
+    margin-top: rem(80px);
+    max-width: $base-content-width + 40px;
+    padding-left: rem(40px);
+    h2 {
+      margin-bottom: rem(24px);
+    }
+    .services {
+      width: $ten-columns;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-left: auto;
+      margin-top: rem(-15px);
+      & > div {
+        width: calc(50% - #{$gutter-width} / 2);
+        margin-bottom: $gutter-width;
+        &:nth-last-child(-n+2) {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }

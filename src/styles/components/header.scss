@@ -1,3 +1,5 @@
+@import "../utility";
+
 header {
   position: sticky;
   top: 0;
@@ -5,4 +7,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  max-width: $base-content-width;
+  margin: 0 auto;
 }

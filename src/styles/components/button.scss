@@ -24,6 +24,15 @@
   display: inline-block;
   margin-right: 1.3rem;
   cursor: pointer;
+  color: $pseudo-black;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: rem(.56px);
+  font-weight: 600;
+  line-height: 1em;
+  &:hover {
+    text-decoration: underline;
+  }
   &:after {
     content: '';
     position: absolute;

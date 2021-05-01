@@ -5,6 +5,8 @@ $base-content-width: 1440px;
 $column-width: 78px;
 $gutter-width: 24px;
 
+$ten-columns: $column-width * 10 + $gutter-width * 9;
+
 //colors
 $pseudo-black: #303030;
 $brand-blue:   #3175F2;
