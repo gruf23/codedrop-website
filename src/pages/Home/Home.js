@@ -31,11 +31,11 @@ function HomePage() {
         <div className="text-block">
           <div className="sub">about us</div>
           <h2>Who We Are</h2>
-          <p>Based in Omsk, Russia team of the best front-end, back-end and fullstack developers. We
-            can quickly and easily adjust our activities to your business processes, tools and
+          <p>Based in Omsk, Russia team of the best front-end, back-end and fullstack developers.<br/>
+            We can quickly and easily adjust our activities to your business processes,<br/>tools and
             environments.</p>
-          <p>Our aim is to contribute first-class solutions to your projects and gain recognition as
-            a professional company you can truly rely on.</p>
+          <p>Our aim is to contribute first-class solutions to your projects and gain recognition<br/>
+            as a professional company you can truly rely on.</p>
         </div>
         <div className="upwork-block">
           <h3>We on <Link href={'https://upwork.com'}><img src={upworkLogo} alt="Upwork"/></Link>
@@ -63,25 +63,25 @@ function HomePage() {
             image={dev}
             heading={'Development'}
             sub={'Transform your buisness through technology'}
-            link={'#'}
+            link={'/services'}
           />
           <Capability
             image={uiux}
             heading={'Design'}
             sub={'Elevate your user experience'}
-            link={'#'}
+            link={'/services'}
           />
           <Capability
             image={servers}
             heading={'Cloud & DevOps'}
             sub={'Future-Proof and Scale Your Infrastructure'}
-            link={'#'}
+            link={'/services'}
           />
           <Capability
             image={support}
             heading={'Support'}
             sub={'Keep Your Software Running At Its Best'}
-            link={'#'}
+            link={'/services'}
           />
         </div>
       </section>

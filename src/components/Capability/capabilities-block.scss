@@ -11,10 +11,21 @@
   background-repeat: no-repeat;
   background-position: bottom right;
   height: 200px;
+  transform: scale(1);
+  transition: transform .3s, box-shadow .3s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 8px 10px 1px rgba(113,140,159,0.20);
+    h3 {
+      color: $brand-orange;
+    }
+  }
   h3 {
     font-size: rem(32px);
     letter-spacing: rem(1px);
     margin-bottom: rem(8px);
+    transition: .3s;
   }
   .service-sub {
     color: #818181;

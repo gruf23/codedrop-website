@@ -110,9 +110,21 @@ section {
     }
   }
   &.capabilities {
-    margin-top: rem(80px);
+    position: relative;
+    margin-top: rem(120px);
     max-width: $base-content-width + 40px;
     padding-left: rem(40px);
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: - rem(40px);
+      width: $column-width * 8 + $gutter-width * 9;
+      height: 90%;
+      background-color: #F4F4F4;
+      border-radius: rem(40px);
+      z-index: -1;
+    }
     h2 {
       margin-bottom: rem(24px);
     }

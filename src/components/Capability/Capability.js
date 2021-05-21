@@ -1,25 +1,30 @@
-import './capabilities-block.scss'
-import BgShape from '../../assets/graphics/service-block/bg-shape.svg'
-import { Link } from '../Buttons'
+import './capabilities-block.scss';
+import BgShape from '../../assets/graphics/service-block/bg-shape.svg';
+import LinkIcon from '../../assets/icons/external-link.svg';
+import { withRouter } from 'react-router-dom';
 
-function Capability({image = false, heading = false, sub = false, link = false}) {
-  if (!image || !heading) {
+function Capability(props) {
+  function handleClick() {
+    props.history.push(props.link);
+  }
+
+  if (!props.image || !props.heading) {
     throw new Error('Invalid Attribute');
   }
   return (
-    <div className={'service-block'} style={{backgroundImage: `url(${BgShape})`}}>
+    <div className={'service-block'} style={{backgroundImage: `url(${BgShape})`}} onClick={handleClick}>
       <div>
-        <h3>{heading}</h3>
-        {sub &&
-          <p className="service-sub">{sub}</p>
+        <h3>{props.heading}</h3>
+        {props.sub &&
+        <p className="service-sub">{props.sub}</p>
         }
-        {link &&
-          <Link href={link} />
+        {props.link &&
+        <img src={LinkIcon} alt=""/>
         }
       </div>
-      <img src={image} alt=""/>
+      <img src={props.image} alt=""/>
     </div>
-  )
+  );
 }
 
-export default Capability;
+export default withRouter(Capability);
