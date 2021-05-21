@@ -1,0 +1,14 @@
+@import "./src/styles/utility";
+@import "../button";
+
+.bigBlueButton {
+  @extend .button;
+  background-image: linear-gradient(-45deg, #3779F4 0%, #1961E9 100%);
+  border-radius: rem(52px / 2);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  height: rem(52px);
+  padding-left: rem(32px);
+  padding-right: rem(32px);
+}

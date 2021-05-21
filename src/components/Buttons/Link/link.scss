@@ -1,0 +1,27 @@
+@import "./src/styles/utility";
+
+.external-link {
+  position: relative;
+  display: inline-block;
+  margin-right: 1.3rem;
+  cursor: pointer;
+  color: $pseudo-black;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: rem(.56px);
+  font-weight: 600;
+  line-height: 1em;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: -1.2rem;
+    top: calc(50% - .5rem);
+    width: 1rem;
+    height: 1rem;
+    //background: url("../../assets/icons/external-link.svg") no-repeat;
+    background: url("../../../assets/icons/external-link.svg") no-repeat;
+  }
+}

@@ -1,6 +1,6 @@
-import Navigation from './Navigation';
-import '../styles/components/header.scss';
-import logo from '../assets/cd-logo-vertical.svg'
+import Navigation from '../Navigation';
+import './header.scss';
+import logo from '../../assets/cd-logo-vertical.svg'
 
 function Header() {
   return (

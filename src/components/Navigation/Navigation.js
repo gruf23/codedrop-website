@@ -1,4 +1,4 @@
-import '../styles/components/navigation.scss';
+import './navigation.scss';
 import { Link } from 'react-router-dom';
 
 function Navigation() {

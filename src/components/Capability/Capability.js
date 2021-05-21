@@ -1,8 +1,8 @@
-import '../../styles/components/capabilities-block.scss'
+import './capabilities-block.scss'
 import BgShape from '../../assets/graphics/service-block/bg-shape.svg'
-import Link from '../buttons/Link'
+import { Link } from '../Buttons'
 
-function ServiceBlock({image = false, heading = false, sub = false, link = false}) {
+function Capability({image = false, heading = false, sub = false, link = false}) {
   if (!image || !heading) {
     throw new Error('Invalid Attribute');
   }
@@ -22,4 +22,4 @@ function ServiceBlock({image = false, heading = false, sub = false, link = false
   )
 }
 
-export default ServiceBlock;
+export default Capability;

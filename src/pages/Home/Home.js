@@ -1,15 +1,15 @@
-import '../styles/pages/home.scss';
-import heroGraphics from '../assets/graphics/homepage-hero.svg';
-import upworkLogo from '../assets/graphics/Upwork-logo.svg';
-import topRatedBadge from '../assets/graphics/top-rated-badge.svg';
-import BgShape1 from '../components/bg-shapes/BgShape1';
-import { BigBlueButton, Link } from '../components/buttons';
-import ServiceBlock from '../components/capabilities/ServiceBlock';
+import './home.scss';
+import heroGraphics from '../../assets/graphics/homepage-hero.svg';
+import upworkLogo from '../../assets/graphics/Upwork-logo.svg';
+import topRatedBadge from '../../assets/graphics/top-rated-badge.svg';
+import BgShape1 from '../../components/BgShapes/BgShape1';
+import { BigBlueButton, Link } from '../../components/Buttons';
+import Capability from '../../components/Capability/Capability';
 
-import dev from '../assets/graphics/service-block/dev.svg'
-import servers from '../assets/graphics/service-block/servers.svg'
-import support from '../assets/graphics/service-block/support.svg'
-import uiux from '../assets/graphics/service-block/uiux.svg'
+import dev from '../../assets/graphics/service-block/dev.svg'
+import servers from '../../assets/graphics/service-block/servers.svg'
+import support from '../../assets/graphics/service-block/support.svg'
+import uiux from '../../assets/graphics/service-block/uiux.svg'
 
 function HomePage() {
   return (
@@ -59,25 +59,25 @@ function HomePage() {
           Whole Package</h2>
         <Link href={''}>Learn more</Link>
         <div className="services">
-          <ServiceBlock
+          <Capability
             image={dev}
             heading={'Development'}
             sub={'Transform your buisness through technology'}
             link={'#'}
           />
-          <ServiceBlock
+          <Capability
             image={uiux}
             heading={'Design'}
             sub={'Elevate your user experience'}
             link={'#'}
           />
-          <ServiceBlock
+          <Capability
             image={servers}
             heading={'Cloud & DevOps'}
             sub={'Future-Proof and Scale Your Infrastructure'}
             link={'#'}
           />
-          <ServiceBlock
+          <Capability
             image={support}
             heading={'Support'}
             sub={'Keep Your Software Running At Its Best'}

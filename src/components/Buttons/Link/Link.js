@@ -1,3 +1,5 @@
+import './link.scss';
+
 function Link (props) {
   return (
     <a className={'external-link'} href={props.href}>

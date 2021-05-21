@@ -1,4 +1,5 @@
-import shape from '../../assets/graphics/bg-shape-1.svg'
+import './bg-shape.scss';
+import shape from '../../assets/graphics/bg-shape-1.svg';
 
 function BgShape1() {
   return (
