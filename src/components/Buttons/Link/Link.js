@@ -1,11 +1,21 @@
 import './link.scss';
 
-function Link (props) {
+/**
+ * Decorated link with 'external link' icon
+ * @param {string} props.children - link content (label)
+ * @param {string} props.href - link href
+ * @param {string} props.target - link target attribute
+ * @param {string} props.classes - additional classes divided by space as in HTML
+ * @returns {JSX.Element}
+ * @constructor
+ */
+function Link(props) {
+  const {href, classes, children, target = '_self'} = props;
   return (
-    <a className={'external-link'} href={props.href}>
-      { props.children }
+    <a className={`external-link ${classes}`} href={href} target={target}>
+      {children}
     </a>
-  )
+  );
 }
 
-export default Link
+export default Link;
