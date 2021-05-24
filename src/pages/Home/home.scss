@@ -144,4 +144,54 @@ section {
       }
     }
   }
+  &.work {
+    margin-top: rem(48px);
+    padding-bottom: rem(56px);
+    .text-block {
+      width: 100%;
+      max-width: $column-width * 7 + $gutter-width * 8;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+      h2 {
+        margin-bottom: rem(24px);
+      }
+      .sub {
+        align-self: flex-start;
+        padding-left: .4rem;
+      }
+      p {
+        text-align: center;
+        width: 100%;
+        max-width: $column-width * 6 + $gutter-width * 6;
+      }
+    }
+    & > h3 {
+      text-align: center;
+      margin-top: rem(24px);
+      margin-bottom: rem(32px);
+    }
+    .selected-projects {
+      width: 100%;
+      max-width: $base-content-width - $column-width * 4 - $gutter-width * 4;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .explore-more {
+      margin-top: rem(40px);
+      text-align: center;
+      h3 {
+        margin-bottom: rem(16px);
+      }
+      p {
+        width: 100%;
+        max-width: $column-width * 6 + $gutter-width * 5;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: rem(32px);
+      }
+    }
+  }
 }

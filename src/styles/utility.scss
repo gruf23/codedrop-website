@@ -12,6 +12,8 @@ $pseudo-black: #303030;
 $brand-blue:   #3175F2;
 $brand-orange: #FFC900;
 
+$mid-grey:     #757575;
+
 @function stripUnit($value) {
   @return $value / ($value * 0 + 1);
 }

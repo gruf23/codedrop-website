@@ -1,0 +1,62 @@
+@import "src/styles/utility";
+
+.project-summary-big {
+  display: flex;
+  justify-content: space-between;
+  &.ltr {
+    .content {
+      padding-right: rem(24px);
+    }
+  }
+  &.rtl {
+    flex-direction: row-reverse;
+    .content {
+      padding-left: rem(24px);
+    }
+  }
+  .content {
+    flex: 4;
+    .tags {
+      font-size: rem(18px);
+      color: rgba(48,48,48,0.70);
+      letter-spacing: rem(1.12px);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: rem(8px);
+    }
+    h3 {
+      margin-top: 0;
+      margin-bottom: rem(8px);
+    }
+    .summary {
+      color: #818181;
+      letter-spacing: rem(0.44px);
+      line-height: rem(24px);
+      margin-bottom: rem(8px);
+    }
+  }
+  .image {
+    position: relative;
+    flex: 6;
+    border-radius: rem(8px);
+    background-color: #D4ECFF;
+    overflow: hidden;
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: (9 / 16) * 100%;
+    }
+    & > div {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -38,4 +38,10 @@
     opacity: 0;
     transition: transform .3s ease-out, opacity .3s ease-out;
   }
+  &.orange {
+    color: $brand-orange;
+    &:before {
+      background-color: $mid-grey;
+    }
+  }
 }
