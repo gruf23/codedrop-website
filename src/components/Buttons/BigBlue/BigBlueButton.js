@@ -1,8 +1,8 @@
 import './big-blue.scss'
 
-function BigBlueButton({text = 'button', onClick = undefined}) {
+function BigBlueButton({children, onClick = undefined}) {
   return (
-    <button className={'button bigBlueButton'} onClick={onClick}>{text}</button>
+    <button className={'button bigBlueButton'} onClick={onClick}>{children}</button>
   )
 }
 

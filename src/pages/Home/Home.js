@@ -24,7 +24,7 @@ function HomePage() {
           <p>As a full-service eCommerce agency, we follow an inbound{'\n'}
             methodology and deliver bespoke, white-glove service to{'\n'}
             convert visitors into repeat customers.</p>
-          <BigBlueButton text={'book a free consultation'} onClick={undefined}/>
+          <BigBlueButton onClick={undefined}>book a free consultation</BigBlueButton>
         </div>
         <img src={heroGraphics} alt=""/>
       </section>
@@ -112,6 +112,12 @@ function HomePage() {
           </p>
           <Link classes={'orange'} href={'#'}>all cases</Link>
         </div>
+      </section>
+      <section className="contact">
+        <h2>Have any questions left?<br/>
+          Feel free to ask us.</h2>
+        <p>We’ll reply you right the way. See yourself.</p>
+        <BigBlueButton>contact us</BigBlueButton>
       </section>
     </div>
   );

@@ -194,4 +194,14 @@ section {
       }
     }
   }
+  &.contact {
+    width: 100%;
+    max-width: $column-width * 6 + $gutter-width * 5;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    p {
+      margin-bottom: rem(24px);
+    }
+  }
 }
