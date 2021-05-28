@@ -3,7 +3,7 @@ import heroGraphics from '../../assets/graphics/homepage-hero.svg';
 import upworkLogo from '../../assets/graphics/Upwork-logo.svg';
 import topRatedBadge from '../../assets/graphics/top-rated-badge.svg';
 import BgShape1 from '../../components/BgShapes/BgShape1';
-import { BigBlueButton, Link } from '../../components/Buttons';
+import { BigBlueButton, DecoratedLink } from '../../components/Buttons';
 import Capability from '../../components/Capability/Capability';
 import SelectedProjects from '../../components/Projects';
 
@@ -42,7 +42,7 @@ function HomePage() {
             as a professional company you can truly rely on.</p>
         </div>
         <div className="upwork-block">
-          <h3>We on <Link href={'https://upwork.com'}><img src={upworkLogo} alt="Upwork"/></Link>
+          <h3>We on <DecoratedLink href={'https://upwork.com'}><img src={upworkLogo} alt="Upwork"/></DecoratedLink>
           </h3>
           <div>
             <ul className="stats">
@@ -63,7 +63,7 @@ function HomePage() {
         <div className="sub">capabilities</div>
         <h2>We're The {'\n'}
           Whole Package</h2>
-        <Link href={''}>Learn more</Link>
+        <DecoratedLink href={''}>Learn more</DecoratedLink>
         <div className="services">
           <Capability
             image={dev}
@@ -110,7 +110,7 @@ function HomePage() {
             developing strategies, providing consultations, working with digital solutions,
             implementing high-end technology and operations.
           </p>
-          <Link classes={'orange'} href={'#'}>all cases</Link>
+          <DecoratedLink classes={'orange'} href={'#'}>all cases</DecoratedLink>
         </div>
       </section>
       <section className="contact">

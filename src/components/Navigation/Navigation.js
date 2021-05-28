@@ -1,16 +1,28 @@
 import './navigation.scss';
 import { Link } from 'react-router-dom';
 
-function Navigation() {
+/**
+ * Navigation component
+ * @param {string} props.dir - Nav items direction. horizontal | vertical
+ * @param {string} props.align - Nav items align. For vertical direction use only. left | center | right
+ * @returns {JSX.Element}
+ * @constructor
+ */
+function Navigation(props) {
   return (
-    <nav>
+    <nav className={`${props.dir} ${props.align}`}>
       <Link to="/">Home</Link>
-      <a href="#">About</a>
-      <a href="#">Collection</a>
+      <Link href="#">About</Link>
+      <Link href="#">Collection</Link>
       <Link to="/contact">Contact</Link>
-      <a href="#">Carrer</a>
+      <Link href="#">Carrer</Link>
     </nav>
   )
 }
+
+Navigation.defaultProps = {
+  dir: 'horizontal',
+  align: ''
+};
 
 export default Navigation;

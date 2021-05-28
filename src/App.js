@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,11 +7,15 @@ import {
 
 import './styles/main.scss';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 import HomePage from './pages/Home';
 import ContactPage from './pages/Contact';
 
 function App() {
+  useEffect(() => {
+    document.title = 'CodeDrop';
+  });
   return (
     <Router>
       <div>
@@ -25,6 +29,8 @@ function App() {
             <ContactPage/>
           </Route>
         </Switch>
+
+        <Footer/>
       </div>
     </Router>
   );

@@ -1,4 +1,4 @@
-import './link.scss';
+import './decorated-link.scss';
 
 /**
  * Decorated link with 'external link' icon
@@ -9,7 +9,7 @@ import './link.scss';
  * @returns {JSX.Element}
  * @constructor
  */
-function Link(props) {
+function DecoratedLink(props) {
   const {href, classes, children, target = '_self'} = props;
   return (
     <a className={`external-link ${classes}`} href={href} target={target}>
@@ -18,4 +18,4 @@ function Link(props) {
   );
 }
 
-export default Link;
+export default DecoratedLink;

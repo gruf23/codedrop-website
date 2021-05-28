@@ -1,5 +1,5 @@
 import './project-summary-big.scss'
-import { Link } from '../../Buttons';
+import { DecoratedLink } from '../../Buttons';
 
 /**
  * Big project summary block
@@ -21,7 +21,7 @@ function ProjectSummaryBig(props) {
         <div className="tags">{props.data.tags.join(', ')}</div>
         <h3>{props.data.title}</h3>
         <p className="summary">{props.data.summary}</p>
-        <Link href={props.data.websiteUrl}>Visit website</Link>
+        <DecoratedLink href={props.data.websiteUrl}>Visit website</DecoratedLink>
       </div>
       <div className="image">
         <div>

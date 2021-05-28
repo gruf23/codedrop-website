@@ -1,5 +1,5 @@
 import './capabilities-block.scss';
-import BgShape from '../../assets/graphics/service-block/bg-shape.svg';
+import BgShape from './bg-shape.svg';
 import LinkIcon from '../../assets/icons/external-link.svg';
 import { withRouter } from 'react-router-dom';
 
