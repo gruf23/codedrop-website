@@ -1,7 +1,19 @@
+import './contact.scss'
+import ContactForm from '../../components/ContactForm';
+
 function ContactPage() {
   return (
     <div>
-      I'm a contact page! Punch me in the balls!
+      <section className={'contact-form-wrap'}>
+        <div className="left">
+          <h1>Contact Us</h1>
+          <p>
+            Tell us about your project.<br/>
+            We'll back to you within 24 hrs.
+          </p>
+        </div>
+        <ContactForm/>
+      </section>
     </div>
   )
 }

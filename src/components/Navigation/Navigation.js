@@ -12,10 +12,10 @@ function Navigation(props) {
   return (
     <nav className={`${props.dir} ${props.align}`}>
       <Link to="/">Home</Link>
-      <Link href="#">About</Link>
-      <Link href="#">Collection</Link>
+      <Link to="#">About</Link>
+      <Link to="#">Collection</Link>
       <Link to="/contact">Contact</Link>
-      <Link href="#">Carrer</Link>
+      <Link to="#">Carrer</Link>
     </nav>
   )
 }

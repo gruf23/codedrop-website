@@ -34,9 +34,9 @@ function Footer() {
         <div className="emails">
           <h4>Contact us</h4>
           <p className="label">new buisness</p>
-          <Link to={'mailto:deal@codedrop.cc'}><span>deal@codedrop.cc</span></Link>
+          <Link to="mailto:deal@codedrop.cc"><span>deal@codedrop.cc</span></Link>
           <p className="label">say hi</p>
-          <Link to={'mailto:hello@codedrop.cc'}><span>hello@codedrop.cc</span></Link>
+          <Link to="mailto:hello@codedrop.cc"><span>hello@codedrop.cc</span></Link>
         </div>
       </div>
     </footer>
