@@ -3,7 +3,7 @@ import heroGraphics from '../../assets/graphics/homepage-hero.svg';
 import upworkLogo from '../../assets/graphics/Upwork-logo.svg';
 import topRatedBadge from '../../assets/graphics/top-rated-badge.svg';
 import BgShape1 from '../../components/BgShapes/BgShape1';
-import { BigBlueButton, DecoratedLink } from '../../components/Buttons';
+import { BlueButton, DecoratedLink } from '../../components/Buttons';
 import Capability from '../../components/Capability/Capability';
 import SelectedProjects from '../../components/Projects';
 
@@ -24,7 +24,7 @@ function HomePage() {
           <p>As a full-service eCommerce agency, we follow an inbound{'\n'}
             methodology and deliver bespoke, white-glove service to{'\n'}
             convert visitors into repeat customers.</p>
-          <BigBlueButton onClick={undefined}>book a free consultation</BigBlueButton>
+          <BlueButton onClick={undefined}>book a free consultation</BlueButton>
         </div>
         <img src={heroGraphics} alt=""/>
       </section>
@@ -117,7 +117,7 @@ function HomePage() {
         <h2>Have any questions left?<br/>
           Feel free to ask us.</h2>
         <p>We’ll reply you right the way. See yourself.</p>
-        <BigBlueButton>contact us</BigBlueButton>
+        <BlueButton>contact us</BlueButton>
       </section>
     </div>
   );

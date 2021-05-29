@@ -1,5 +1,5 @@
-import BigBlueButton from './BigBlue/BigBlueButton';
+import BlueButton from './BigBlue/BlueButton';
 import DecoratedLink from './DecoratedLink/DecoratedLink';
-import BigBlueBorderedButton from './BigBlueBordered/BigBlueBorderedButton';
+import BlueBorderedButton from './BlueBordered/BlueBorderedButton';
 
-export { BigBlueButton, DecoratedLink, BigBlueBorderedButton };
+export { BlueButton, DecoratedLink, BlueBorderedButton };
