@@ -24,4 +24,19 @@ form.contact-form {
   .checkbox-area {
     margin-bottom: rem(16px);
   }
+  .disclaimer {
+    width: 100%;
+    font-size: rem(14px);
+    color: rgba(102,102,102,0.70);
+    letter-spacing: rem(0.41px);
+    a {
+      color: #A4C6EB;
+      &:hover {
+        color: $pseudo-black;
+      }
+    }
+  }
+  .button {
+    margin-top: rem(16px);
+  }
 }

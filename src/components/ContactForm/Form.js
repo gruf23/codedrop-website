@@ -1,6 +1,8 @@
 import './contact-form.scss';
 import { useState } from 'react';
 import { TextInput, TextArea, Checkbox } from '../Inputs';
+import { Link } from 'react-router-dom';
+import { BigBlueBorderedButton } from '../Buttons'
 
 function ContactForm() {
   const [errors, setErrors] = useState({
@@ -94,7 +96,11 @@ function ContactForm() {
                   value={fields.message}>
         </TextArea>
       </div>
-      <button type="submit">click me</button>
+      <p className="disclaimer">
+        I have read and am aware of my user rights in the processing of personal data as outlined in
+        the <Link to="/privacy-policy" target="_blank">Privacy Policy</Link> of Codedrop.
+      </p>
+      <BigBlueBorderedButton>send</BigBlueBorderedButton>
     </form>
   );
 }
