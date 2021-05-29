@@ -1,0 +1,39 @@
+@import "./src/styles/utility";
+
+.text-input {
+  padding-bottom: rem(32px);
+  &.invalid {
+    padding-bottom: rem(9px);
+    input {
+      border-color: $color-error;
+    }
+  }
+  label {
+    font-weight: 600;
+    font-size: rem(14px);
+    text-transform: uppercase;
+    letter-spacing: rem(1.5px);
+    margin-bottom: rem(8px);
+  }
+  textarea {
+    width: 100%;
+    min-height: rem(150px);
+    background: #FFFFFF;
+    border: 1px solid #D9DFE5;
+    border-radius: rem(5px);
+    padding: rem(10px) rem(15px);
+    letter-spacing: rem(0.56px);
+    resize: vertical;
+    &::placeholder {
+      color: #B7BBC0;
+    }
+    &:active:not(.invalid) {
+      border-color: $brand-blue
+    }
+  }
+  .error-msg {
+    font-size: rem(14px);
+    color: $color-error;
+    letter-spacing: rem(1.5px);
+  }
+}

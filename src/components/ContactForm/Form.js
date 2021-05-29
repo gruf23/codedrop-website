@@ -1,17 +1,19 @@
-import './contact-form.scss'
+import './contact-form.scss';
 import { useState } from 'react';
-import { TextInput } from '../Inputs';
+import { TextInput, TextArea } from '../Inputs';
 
 function ContactForm() {
   const [errors, setErrors] = useState({
     name: '',
-    email: ''
+    email: '',
+    message: ''
   });
   const [fields, setFields] = useState({
     name: '',
     email: '',
     companyName: '',
-    companyType: ''
+    companyType: '',
+    message: ''
   });
 
   const submitHandler = (e) => {
@@ -59,8 +61,13 @@ function ContactForm() {
                    value={fields.companyName}
         />
       </div>
-      <div className="fullwidth">
-
+      <div className="full-width">
+        <TextArea name={'message'} label={'message'}
+                  placeholder={'What`s on your mind?'}
+                  required={true} error={errors.message}
+                  onChangeCallback={changeHandler}>
+          {fields.message}
+        </TextArea>
       </div>
       <button type="submit">click me</button>
     </form>
