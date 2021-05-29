@@ -10,4 +10,18 @@ form.contact-form {
   .full-width {
     width: 100%;
   }
+  .full-width.legend-holder {
+    line-height: 1em;
+  }
+  .legend {
+    display: inline-block;
+    font-weight: 600;
+    font-size: rem(14px);
+    text-transform: uppercase;
+    letter-spacing: rem(1.5px);
+    margin-bottom: rem(8px);
+  }
+  .checkbox-area {
+    margin-bottom: rem(16px);
+  }
 }

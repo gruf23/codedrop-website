@@ -22,8 +22,8 @@ function TextArea(props) {
       }
       <textarea id={props.name} name={props.name}
                 placeholder={props.placeholder}
-                onChange={(e) => props.onChangeCallback(e)}>
-        {props.children}
+                onChange={(e) => props.onChangeCallback(e)}
+                value={props.value}>
       </textarea>
       {!isValid ?
         <p className="error-msg">{props.error}</p> : ''
