@@ -14,7 +14,7 @@ function FileDrop(props) {
 
   return (
     <div className="drop-file-input">
-      <div {...getRootProps({className: 'dropzone'})}>
+      <div {...getRootProps({className: `dropzone ${isDragActive ? 'drag' : ''}`})}>
         <input {...getInputProps()} />
         <div className="label">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="46" fill="#d9dfe5">
@@ -26,7 +26,7 @@ function FileDrop(props) {
               <p>put it right here </p> :
               <p>Drop your files here or click to browse</p>
           }
-          <FileList files={props.acceptedList}/>
+          <FileList files={props.filesList}/>
         </div>
       </div>
     </div>

@@ -11,8 +11,15 @@
     background-color: #F8FAFC;
     border: 1px solid #D9DFE5;
     border-radius: rem(5px);
-    transition: background-color .3s;
+    transition: background-color .3s, box-shadow .3s;
     cursor: pointer;
+    &.drag {
+      box-shadow: 0 0 0 rgba($brand-blue, 0.4);
+      animation: pulse 1.5s infinite;
+      svg {
+        fill: $brand-blue;
+      }
+    }
     svg {
       transition: fill .3s;
     }
@@ -23,9 +30,7 @@
       }
     }
     .label {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
+      text-align: center;
       p {
         text-transform: uppercase;
         margin-top: rem(10px);
@@ -35,5 +40,17 @@
         letter-spacing: rem(1.5pxv);
       }
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($brand-blue, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 1rem rgba($brand-blue, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($brand-blue, 0);
   }
 }

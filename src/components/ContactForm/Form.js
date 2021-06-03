@@ -103,7 +103,7 @@ function ContactForm() {
         </TextArea>
       </div>
       <div className="full-width">
-        <FileDrop onDrop={filesHandler} acceptedList={fields.files}/>
+        <FileDrop onDrop={filesHandler} filesList={fields.files}/>
       </div>
       <p className="disclaimer">
         I have read and am aware of my user rights in the processing of personal data as outlined in
