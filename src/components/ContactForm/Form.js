@@ -1,8 +1,8 @@
 import './contact-form.scss';
 import { useState } from 'react';
-import { TextInput, TextArea, Checkbox } from '../Inputs';
+import { TextInput, TextArea, Checkbox, FileDrop } from '../Inputs';
 import { Link } from 'react-router-dom';
-import { BlueBorderedButton } from '../Buttons'
+import { BlueBorderedButton } from '../Buttons';
 
 function ContactForm() {
   const [errors, setErrors] = useState({
@@ -20,10 +20,11 @@ function ContactForm() {
     design: false,
     development: false,
     devops: false,
-    qa: false
+    qa: false,
+    files: []
   });
 
-  const submitHandler = (e) => {
+  const submitHandler = e => {
     e.preventDefault();
     console.log(e);
   };
@@ -33,6 +34,12 @@ function ContactForm() {
       ...fields,
       [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
     });
+  };
+
+  const filesHandler = selectedFiles => {
+    console.log('in parent')
+    console.log(selectedFiles)
+    // setFields({files: selectedFiles});
   };
 
   return (
@@ -95,6 +102,9 @@ function ContactForm() {
                   onChangeCallback={changeHandler}
                   value={fields.message}>
         </TextArea>
+      </div>
+      <div className="full-width">
+        <FileDrop onDrop={filesHandler}/>
       </div>
       <p className="disclaimer">
         I have read and am aware of my user rights in the processing of personal data as outlined in
