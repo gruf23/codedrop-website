@@ -1,5 +1,4 @@
 import './file-list.scss'
-import icon from './paperclip.svg'
 
 /**
  * Files list for file input
@@ -12,10 +11,9 @@ function FileList(props) {
     <div className="file-list">
       {Object.keys(props.files).map((key, index) => {
         return (
-          <div key={index}>
-            <img src={icon} alt="attachment icon"/>
+          <span key={index}>
             {props.files[key].name}
-          </div>
+          </span>
         )
       })}
     </div>

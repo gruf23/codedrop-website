@@ -36,11 +36,10 @@ function ContactForm() {
     });
   };
 
-  const filesHandler = selectedFiles => {
-    console.log('in parent')
-    console.log(selectedFiles)
-    // setFields({files: selectedFiles});
-  };
+  const filesHandler = selectedFiles => setFields({
+    ...fields,
+    files: [...fields.files, ...selectedFiles]
+  });
 
   return (
     <form className={'contact-form'} onSubmit={submitHandler}>
@@ -104,7 +103,7 @@ function ContactForm() {
         </TextArea>
       </div>
       <div className="full-width">
-        <FileDrop onDrop={filesHandler}/>
+        <FileDrop onDrop={filesHandler} acceptedList={fields.files}/>
       </div>
       <p className="disclaimer">
         I have read and am aware of my user rights in the processing of personal data as outlined in

@@ -6,15 +6,20 @@
   align-items: center;
   justify-content: center;
   padding-top: rem(10px);
-  & > div {
-    display: flex;
-    align-items: center;
+  & > span {
+    position: relative;
+    padding-left: 1.1rem;
     font-size: rem(16px);
     color: #6E6E6E;
-    img {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
       height: 1rem;
-      width: auto;
+      width: 1rem;
       margin-right: rem(6px);
+      background: url("./paperclip.svg") no-repeat center;
     }
   }
 }

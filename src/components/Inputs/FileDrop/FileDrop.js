@@ -2,33 +2,15 @@ import './file-drop.scss';
 
 import FileList from './FileList/FileList';
 import { useDropzone } from 'react-dropzone';
-import { useState, useEffect } from 'react'
 
 function FileDrop(props) {
-  const [selectedFiles, setSelectedFiles] = useState([]);
   const {getRootProps, getInputProps, isDragActive} = useDropzone({
     maxFiles: 20,
     maxSize: 2097152,
     onDrop: (acceptedFiles) => {
-      setSelectedFiles(prevArray => [...prevArray, ...acceptedFiles]);
-      console.log('---------')
-      console.log(acceptedFiles)
-      console.log('---------')
-      props.onDrop(selectedFiles);
+      props.onDrop(acceptedFiles);
     }
   });
-
-  // useEffect(() => {
-  //   const uniqueFilesList = selectedFiles.reduce((file, current) => {
-  //     const x = file.find(item => item.name === current.name);
-  //     if (!x) {
-  //       return file.concat([current]);
-  //     } else {
-  //       return file;
-  //     }
-  //   }, []);
-  //   setSelectedFiles([...uniqueFilesList]);
-  // }, [selectedFiles])
 
   return (
     <div className="drop-file-input">
@@ -44,7 +26,7 @@ function FileDrop(props) {
               <p>put it right here </p> :
               <p>Drop your files here or click to browse</p>
           }
-          <FileList files={selectedFiles}/>
+          <FileList files={props.acceptedList}/>
         </div>
       </div>
     </div>
