@@ -38,6 +38,9 @@
         font-size: rem(14px);
         color: #818181;
         letter-spacing: rem(1.5pxv);
+        &.error-message {
+          color: $color-error;
+        }
       }
     }
   }

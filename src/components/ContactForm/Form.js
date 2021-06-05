@@ -36,10 +36,26 @@ function ContactForm() {
     });
   };
 
-  const filesHandler = selectedFiles => setFields({
-    ...fields,
-    files: [...fields.files, ...selectedFiles]
-  });
+  const fileDropHandler = selectedFiles => {
+    setFields({
+      ...fields,
+      files: [...fields.files, ...selectedFiles]
+    })
+  };
+
+  const fileRemoveHandler = (fileToRemove, e) => {
+    e.stopPropagation();
+    setFields({
+      ...fields,
+      files: fields.files.filter(file => {
+        if (file.errors) {
+          return file.file.name !== fileToRemove;
+        } else {
+          return file.name !== fileToRemove;
+        }
+      })
+    })
+  }
 
   return (
     <form className={'contact-form'} onSubmit={submitHandler}>
@@ -103,7 +119,7 @@ function ContactForm() {
         </TextArea>
       </div>
       <div className="full-width">
-        <FileDrop onDrop={filesHandler} filesList={fields.files}/>
+        <FileDrop onDrop={fileDropHandler} onRemove={fileRemoveHandler} filesList={fields.files}/>
       </div>
       <p className="disclaimer">
         I have read and am aware of my user rights in the processing of personal data as outlined in
