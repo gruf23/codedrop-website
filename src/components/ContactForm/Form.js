@@ -40,7 +40,7 @@ function ContactForm() {
     setFields({
       ...fields,
       files: [...fields.files, ...selectedFiles]
-    })
+    });
   };
 
   const fileRemoveHandler = (fileToRemove, e) => {
