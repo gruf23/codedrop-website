@@ -4,7 +4,7 @@
   padding-bottom: rem(32px);
   &.invalid {
     padding-bottom: rem(9px);
-    input {
+    textarea {
       border-color: $color-error;
     }
   }
@@ -16,6 +16,7 @@
     margin-bottom: rem(8px);
   }
   textarea {
+    display: block;
     width: 100%;
     min-height: rem(150px);
     background: #FFFFFF;

@@ -1,21 +1,24 @@
 import './contact-form.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TextInput, TextArea, Checkbox, FileDrop } from '../Inputs';
 import { Link } from 'react-router-dom';
 import { BlueBorderedButton } from '../Buttons';
+import {validateEmail, validateRequired} from '../../utils/validate';
 
 function ContactForm() {
+  const [valid, setValid] = useState(false)
   const [errors, setErrors] = useState({
     name: '',
     email: '',
     message: ''
   });
+
   const [fields, setFields] = useState({
-    name: '',
-    email: '',
-    companyName: '',
-    companyType: '',
-    message: '',
+    name: undefined,
+    email: undefined,
+    companyName: undefined,
+    companyType: undefined,
+    message: undefined,
     consulting: false,
     design: false,
     development: false,
@@ -26,8 +29,18 @@ function ContactForm() {
 
   const submitHandler = e => {
     e.preventDefault();
-    console.log(e);
+    // validate();
   };
+
+  useEffect(() => {
+    let currentCheck = {
+      name: fields.name !== undefined ? validateRequired(fields.name) : '',
+      email: fields.email !== undefined ? validateEmail(fields.email) : '',
+      message: fields.message  !== undefined ? validateRequired(fields.message) : ''
+    };
+    setErrors(currentCheck);
+    console.log(Object.values(currentCheck))
+  }, [fields.name, fields.email, fields.message]);
 
   const changeHandler = e => {
     setFields({
@@ -64,9 +77,9 @@ function ContactForm() {
                    placeholder={'John Doe'}
                    label={'Name'}
                    onChangeCallback={changeHandler}
-                   value={fields.name}
+                   value={fields.name || ''}
                    required={true}
-                   error={errors.name}
+                   error={errors.name.message}
         />
       </div>
       <div className={'half-width'}>
@@ -74,23 +87,23 @@ function ContactForm() {
                    placeholder={'john@example.com'}
                    label={'E-mail'}
                    onChangeCallback={changeHandler}
-                   value={fields.email}
+                   value={fields.email || ''}
                    required={true}
-                   error={errors.email}
+                   error={errors.email.message}
         />
       </div>
       <div className={'half-width'}>
         <TextInput name={'companyName'}
                    label={'Company name'}
                    onChangeCallback={changeHandler}
-                   value={fields.companyName}
+                   value={fields.companyName || ''}
         />
       </div>
       <div className={'half-width'}>
         <TextInput name={'companyName'}
                    label={'Company name'}
                    onChangeCallback={changeHandler}
-                   value={fields.companyName}
+                   value={fields.companyName || ''}
         />
       </div>
       <div className="full-width legend-holder">
@@ -113,9 +126,9 @@ function ContactForm() {
       <div className="full-width">
         <TextArea name={'message'} label={'message'}
                   placeholder={'What`s on your mind?'}
-                  required={true} error={errors.message}
+                  required={true} error={errors.message.message}
                   onChangeCallback={changeHandler}
-                  value={fields.message}>
+                  value={fields.message || ''}>
         </TextArea>
       </div>
       <div className="full-width">
