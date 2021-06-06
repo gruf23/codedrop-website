@@ -6,12 +6,12 @@ import { BlueBorderedButton } from '../Buttons';
 import { validateEmail, validateRequired } from '../../utils/validate';
 
 function ContactForm() {
+  const [processing, setProcessing] = useState(false);
   const [errors, setErrors] = useState({
     name: '',
     email: '',
     message: ''
   });
-
   const [fields, setFields] = useState({
     name: undefined,
     email: undefined,
@@ -22,14 +22,15 @@ function ContactForm() {
     design: false,
     development: false,
     devops: false,
-    qa: false,
-    files: []
+    qa: false
   });
+  const [files, setFiles] = useState([]);
 
   const submitHandler = e => {
     e.preventDefault();
     if (isFormValid()) {
-
+      setProcessing(true);
+      sendForm();
     } else {
       setErrors({
         name: validateRequired(fields.name),
@@ -39,11 +40,41 @@ function ContactForm() {
     }
   };
 
+  const sendForm = () => {
+    let formData = new FormData();
+    // append inputs data
+    Object.keys(fields).forEach(key => {
+      if (fields[key]) {
+        formData.append(key, fields[key]);
+      }
+    });
+    // append files
+    files
+      .filter(file => {
+        return !file.hasOwnProperty('errors');
+      })
+      .forEach(file => {
+        formData.append('file', file.name);
+      });
+
+    fetch('https://httpbin.org/delay/5', {
+      method: 'POST',
+      body: formData
+    })
+      .then()
+      .catch((e) => {
+        throw e;
+      })
+      .finally(() => {
+        setProcessing(false);
+      })
+  };
+
   const isFormValid = () => {
     let result = true;
     for (const key of Object.keys(errors)) {
       if (typeof errors[key].valid === 'undefined' || errors[key].valid === false) {
-        result = false
+        result = false;
       }
     }
     return result;
@@ -66,24 +97,18 @@ function ContactForm() {
   };
 
   const fileDropHandler = selectedFiles => {
-    setFields({
-      ...fields,
-      files: [...fields.files, ...selectedFiles]
-    });
+    setFiles([...files, ...selectedFiles]);
   };
 
   const fileRemoveHandler = (fileToRemove, e) => {
     e.stopPropagation();
-    setFields({
-      ...fields,
-      files: fields.files.filter(file => {
-        if (file.errors) {
-          return file.file.name !== fileToRemove;
-        } else {
-          return file.name !== fileToRemove;
-        }
-      })
-    });
+    setFiles(files.filter(file => {
+      if (file.errors) {
+        return file.file.name !== fileToRemove;
+      } else {
+        return file.name !== fileToRemove;
+      }
+    }));
   };
 
   return (
@@ -148,13 +173,13 @@ function ContactForm() {
         </TextArea>
       </div>
       <div className="full-width">
-        <FileDrop onDrop={fileDropHandler} onRemove={fileRemoveHandler} filesList={fields.files}/>
+        <FileDrop onDrop={fileDropHandler} onRemove={fileRemoveHandler} filesList={files}/>
       </div>
       <p className="disclaimer">
         I have read and am aware of my user rights in the processing of personal data as outlined in
         the <Link to="/privacy-policy" target="_blank">Privacy Policy</Link> of Codedrop.
       </p>
-      <BlueBorderedButton onClick={submitHandler}>send</BlueBorderedButton>
+      <BlueBorderedButton processing={processing} onClick={submitHandler}>send</BlueBorderedButton>
     </form>
   );
 }
