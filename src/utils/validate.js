@@ -6,7 +6,7 @@ const validateEmail = str => {
   if (!str || str.length === '') {
     response.valid = false;
     response.message = 'This field is required';
-  } else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(str)) {
+  } else if (!/\S+@\S+\.\S+/.test(str)) {
     response.valid = false;
     response.message = 'Please enter a valid e-mail';
   }
