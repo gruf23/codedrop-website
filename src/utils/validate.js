@@ -14,7 +14,7 @@ const validateEmail = str => {
 };
 
 const validateRequired = that => {
-  const valid = !!that && that.length > 0 && typeof that !== 'undefined' && typeof that !== null;
+  const valid = !!that && that.length > 0 && typeof that !== 'undefined';
   return {
     valid: valid,
     message: valid ? '' : 'This field is required'

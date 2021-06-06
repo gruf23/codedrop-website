@@ -3,10 +3,9 @@ import { useState, useEffect } from 'react';
 import { TextInput, TextArea, Checkbox, FileDrop } from '../Inputs';
 import { Link } from 'react-router-dom';
 import { BlueBorderedButton } from '../Buttons';
-import {validateEmail, validateRequired} from '../../utils/validate';
+import { validateEmail, validateRequired } from '../../utils/validate';
 
 function ContactForm() {
-  const [valid, setValid] = useState(false)
   const [errors, setErrors] = useState({
     name: '',
     email: '',
@@ -29,17 +28,34 @@ function ContactForm() {
 
   const submitHandler = e => {
     e.preventDefault();
-    // validate();
+    if (isFormValid()) {
+
+    } else {
+      setErrors({
+        name: validateRequired(fields.name),
+        email: validateEmail(fields.email),
+        message: validateRequired(fields.message)
+      });
+    }
+  };
+
+  const isFormValid = () => {
+    let result = true;
+    for (const key of Object.keys(errors)) {
+      if (typeof errors[key].valid === 'undefined' || errors[key].valid === false) {
+        result = false
+      }
+    }
+    return result;
   };
 
   useEffect(() => {
     let currentCheck = {
       name: fields.name !== undefined ? validateRequired(fields.name) : '',
       email: fields.email !== undefined ? validateEmail(fields.email) : '',
-      message: fields.message  !== undefined ? validateRequired(fields.message) : ''
+      message: fields.message !== undefined ? validateRequired(fields.message) : ''
     };
     setErrors(currentCheck);
-    console.log(Object.values(currentCheck))
   }, [fields.name, fields.email, fields.message]);
 
   const changeHandler = e => {
@@ -67,8 +83,8 @@ function ContactForm() {
           return file.name !== fileToRemove;
         }
       })
-    })
-  }
+    });
+  };
 
   return (
     <form className={'contact-form'} onSubmit={submitHandler}>
@@ -138,7 +154,7 @@ function ContactForm() {
         I have read and am aware of my user rights in the processing of personal data as outlined in
         the <Link to="/privacy-policy" target="_blank">Privacy Policy</Link> of Codedrop.
       </p>
-      <BlueBorderedButton>send</BlueBorderedButton>
+      <BlueBorderedButton onClick={submitHandler}>send</BlueBorderedButton>
     </form>
   );
 }
