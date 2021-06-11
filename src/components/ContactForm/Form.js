@@ -4,9 +4,13 @@ import { TextInput, TextArea, Checkbox, FileDrop } from '../Inputs';
 import { Link } from 'react-router-dom';
 import { BlueBorderedButton } from '../Buttons';
 import { validateEmail, validateRequired } from '../../utils/validate';
+import { Spinner } from '../Misc';
+import { CSSTransition } from 'react-transition-group';
 
 function ContactForm() {
   const [processing, setProcessing] = useState(false);
+  const [postSuccess, setPostSuccess] = useState(false);
+  const [postFail, setPostFail] = useState(false);
   const [errors, setErrors] = useState({
     name: '',
     email: '',
@@ -57,17 +61,40 @@ function ContactForm() {
         formData.append('file', file.name);
       });
 
-    fetch('https://httpbin.org/delay/5', {
+    fetch('https://httpbin.org/', {
       method: 'POST',
       body: formData
     })
-      .then()
+      .then(() => {
+        setPostSuccess(true);
+        setFields({
+          name: undefined,
+          email: undefined,
+          companyName: undefined,
+          companyType: undefined,
+          message: undefined,
+          consulting: false,
+          design: false,
+          development: false,
+          devops: false,
+          qa: false
+        });
+        setTimeout(() => {
+          setPostSuccess(false);
+        }, 5000);
+      })
       .catch((e) => {
+        setPostFail(true);
+        setTimeout(() => {
+          setPostFail(false);
+        }, 3000);
         throw e;
       })
       .finally(() => {
-        setProcessing(false);
-      })
+        setTimeout(() => {
+          setProcessing(false);
+        }, 3000);
+      });
   };
 
   const isFormValid = () => {
@@ -112,7 +139,14 @@ function ContactForm() {
   };
 
   return (
-    <form className={'contact-form'} onSubmit={submitHandler}>
+    <form className={`contact-form ${processing ? 'disabled' : ''}`} onSubmit={submitHandler}>
+
+      <CSSTransition in={processing} timeout={200} unmountOnExit>
+        <div className="overlay">
+          <Spinner/>
+        </div>
+      </CSSTransition>
+
       <div className={'half-width'}>
         <TextInput name={'name'}
                    placeholder={'John Doe'}
@@ -176,10 +210,12 @@ function ContactForm() {
         <FileDrop onDrop={fileDropHandler} onRemove={fileRemoveHandler} filesList={files}/>
       </div>
       <p className="disclaimer">
-        I have read and am aware of my user rights in the processing of personal data as outlined in
-        the <Link to="/privacy-policy" target="_blank">Privacy Policy</Link> of Codedrop.
+        By ticking the checkboxes and confirming with “Get Started” you agree with processing your
+        personal data for the purpose of entering a pre-contractual relationship. For more
+        information on how we are committed to protect and respect your privacy, please check
+        our <Link to="/privacy-policy" target="_blank">Privacy Policy</Link> of Codedrop.
       </p>
-      <BlueBorderedButton processing={processing} onClick={submitHandler}>send</BlueBorderedButton>
+      <BlueBorderedButton processing={processing} onClick={submitHandler}>Get Started</BlueBorderedButton>
     </form>
   );
 }

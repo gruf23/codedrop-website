@@ -1,9 +1,32 @@
 @import "./src/styles/utility";
 
 form.contact-form {
+  position: relative;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  &.disabled {
+    & > *:not(.overlay, .post-feedback) {
+      opacity: .4;
+    }
+  }
+  .overlay {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s;
+    &.enter-done {
+      opacity: 1;
+    }
+  }
   .half-width {
     width: calc(50% - #{$gutter-width / 2});
   }
