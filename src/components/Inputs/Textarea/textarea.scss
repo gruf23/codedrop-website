@@ -6,6 +6,7 @@
     padding-bottom: rem(9px);
     textarea {
       border-color: $color-error;
+      box-shadow: 0 0 0 1px $color-error;
     }
   }
   label {
@@ -24,12 +25,21 @@
     border-radius: rem(5px);
     padding: rem(10px) rem(15px);
     letter-spacing: rem(0.56px);
+    transition: .3s;
+    box-shadow: 0 0 0 0 $brand-blue;
+    outline: none;
     resize: vertical;
     &::placeholder {
       color: #B7BBC0;
     }
-    &:active:not(.invalid) {
-      border-color: $brand-blue
+    &:hover {
+      border: 1px solid #c2c9d0;
+    }
+    &:active:not(.invalid),
+    &:focus:not(.invalid),
+    &:focus-visible:not(.invalid) {
+      border-color: $brand-blue;
+      box-shadow: 0 0 0 1px $brand-blue;
     }
   }
   .error-msg {
