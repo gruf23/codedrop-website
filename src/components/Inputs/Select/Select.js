@@ -2,8 +2,6 @@ import Select from 'react-select';
 
 /**
  * Select input
- * @param {string} props.name - Input name and ID
- * @param {string} props.placeholder - Input placeholder
  * @param {string} props.label - Input label
  * @param {boolean} props.required - Is input required
  * @param {string} props.error - error message
