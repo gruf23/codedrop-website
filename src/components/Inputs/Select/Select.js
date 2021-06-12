@@ -13,13 +13,16 @@ import Select from 'react-select';
 
 const customStyles = {
   control: (provided, {isFocused}) => {
-    const boxShadow = isFocused ? '0 0 0 1px #3175F2' : '';
-    const borderColor = isFocused ? '#D9DFE5' : '#D9DFE5';
+    const boxShadow = isFocused ? '0 0 0 1px #3175F2' : '0 0 0 0 #3175F2';
+    const borderColor = isFocused ? '#3175F2' : '#D9DFE5';
     return {
       ...provided,
       height: 50,
-      borderColor: borderColor,
-      boxShadow: boxShadow
+      borderColor,
+      boxShadow,
+      '&:hover': {
+        borderColor: isFocused ? '#3175F2' : '#c2c9d0'
+      }
     };
   },
   valueContainer: (provided) => ({
