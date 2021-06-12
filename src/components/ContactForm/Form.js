@@ -1,11 +1,21 @@
 import './contact-form.scss';
 import { useState, useEffect } from 'react';
 import { TextInput, TextArea, Checkbox, FileDrop } from '../Inputs';
+import CDSelect from '../Inputs/Select/Select';
 import { Link } from 'react-router-dom';
 import { BlueBorderedButton } from '../Buttons';
 import { validateEmail, validateRequired } from '../../utils/validate';
 import { Spinner } from '../Misc';
 import { CSSTransition } from 'react-transition-group';
+
+const companyTypes = [
+  { value: 'startup-early', label: 'Startup - Early Stage' },
+  { value: 'startup-late', label: 'Startup - Late Stage' },
+  { value: 'sm-md-business', label: 'Small or Medium-sized Business' },
+  { value: 'enterprise', label: 'Enterprise' },
+  { value: 'non-profit', label: 'Non-profit' },
+  { value: 'other', label: 'Other' }
+]
 
 function ContactForm() {
   const [processing, setProcessing] = useState(false);
@@ -138,6 +148,15 @@ function ContactForm() {
     }));
   };
 
+  const changeCompanyTypeHandler = type => {
+    setFields((prevState) => {
+      return {
+        ...prevState,
+        companyType: type.value
+      }
+    })
+  }
+
   return (
     <form className={`contact-form ${processing ? 'disabled' : ''}`} onSubmit={submitHandler}>
 
@@ -175,11 +194,13 @@ function ContactForm() {
         />
       </div>
       <div className={'half-width'}>
-        <TextInput name={'companyName'}
-                   label={'Company name'}
-                   onChangeCallback={changeHandler}
-                   value={fields.companyName || ''}
-        />
+        <CDSelect name={'company-type'}
+                  label={'Company type'}
+                  options={companyTypes}
+                  isSearchable={false}
+                  maxMenuHeight={400}
+                  placeholder={'Pick One...'}
+                  onChange={changeCompanyTypeHandler}/>
       </div>
       <div className="full-width legend-holder">
         <span className="legend">I`m looking for</span>

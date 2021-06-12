@@ -26,8 +26,11 @@
     &::placeholder {
       color: #B7BBC0;
     }
-    &:active:not(.invalid) {
-      border-color: $brand-blue
+    &:active:not(.invalid),
+    &:focus:not(.invalid),
+    &:focus-visible:not(.invalid) {
+      border-color: $brand-blue;
+      box-shadow: 0 0 0 1px $brand-blue;
     }
   }
   .error-msg {
