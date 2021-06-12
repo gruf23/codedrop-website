@@ -119,9 +119,9 @@ function ContactForm() {
 
   useEffect(() => {
     let currentCheck = {
-      name: fields.name !== undefined ? validateRequired(fields.name) : '',
-      email: fields.email !== undefined ? validateEmail(fields.email) : '',
-      message: fields.message !== undefined ? validateRequired(fields.message) : ''
+      name: fields.name !== undefined || errors.name ? validateRequired(fields.name) : '',
+      email: fields.email !== undefined || errors.email ? validateEmail(fields.email) : '',
+      message: fields.message !== undefined || errors.message ? validateRequired(fields.message) : ''
     };
     setErrors(currentCheck);
   }, [fields.name, fields.email, fields.message]);
