@@ -17,6 +17,19 @@ const companyTypes = [
   { value: 'other', label: 'Other' }
 ]
 
+const initialFieldsState = {
+  name: undefined,
+  email: undefined,
+  companyName: undefined,
+  companyType: undefined,
+  message: undefined,
+  consulting: false,
+  design: false,
+  development: false,
+  devops: false,
+  qa: false
+}
+
 function ContactForm() {
   const [processing, setProcessing] = useState(false);
   const [postSuccess, setPostSuccess] = useState(false);
@@ -26,18 +39,7 @@ function ContactForm() {
     email: '',
     message: ''
   });
-  const [fields, setFields] = useState({
-    name: undefined,
-    email: undefined,
-    companyName: undefined,
-    companyType: undefined,
-    message: undefined,
-    consulting: false,
-    design: false,
-    development: false,
-    devops: false,
-    qa: false
-  });
+  const [fields, setFields] = useState(initialFieldsState);
   const [files, setFiles] = useState([]);
 
   const submitHandler = e => {
@@ -77,18 +79,7 @@ function ContactForm() {
     })
       .then(() => {
         setPostSuccess(true);
-        setFields({
-          name: undefined,
-          email: undefined,
-          companyName: undefined,
-          companyType: undefined,
-          message: undefined,
-          consulting: false,
-          design: false,
-          development: false,
-          devops: false,
-          qa: false
-        });
+        setFields(() => initialFieldsState);
         setTimeout(() => {
           setPostSuccess(false);
         }, 5000);
@@ -127,25 +118,29 @@ function ContactForm() {
   }, [fields.name, fields.email, fields.message]);
 
   const changeHandler = e => {
-    setFields({
-      ...fields,
-      [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    setFields((prevState) => {
+      return {
+        ...prevState,
+        [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
+      }
     });
   };
-
+  // todo: Attach unique files only
   const fileDropHandler = selectedFiles => {
-    setFiles([...files, ...selectedFiles]);
+    setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
   };
 
   const fileRemoveHandler = (fileToRemove, e) => {
     e.stopPropagation();
-    setFiles(files.filter(file => {
-      if (file.errors) {
-        return file.file.name !== fileToRemove;
-      } else {
-        return file.name !== fileToRemove;
-      }
-    }));
+    setFiles((prevFiles) => {
+      return prevFiles.filter(file => {
+        if (file.errors) {
+          return file.file.name !== fileToRemove;
+        } else {
+          return file.name !== fileToRemove;
+        }
+      })
+    });
   };
 
   const changeCompanyTypeHandler = type => {
