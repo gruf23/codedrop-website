@@ -3,6 +3,11 @@ const validateEmail = str => {
     valid: true,
     message: ''
   };
+  if (typeof str !== "string") {
+    response.valid = false;
+    response.message = 'Invalid value';
+    return response
+  }
   if (!str || str.length === '') {
     response.valid = false;
     response.message = 'This field is required';
@@ -14,7 +19,10 @@ const validateEmail = str => {
 };
 
 const validateRequired = that => {
-  const valid = !!that && that.length > 0 && typeof that !== 'undefined';
+  let valid = !!that && that.length > 0 && typeof that !== 'undefined';
+  if (that && Object.keys(that).length > 0 && that.constructor === Object) {
+    valid = true;
+  }
   return {
     valid: valid,
     message: valid ? '' : 'This field is required'
