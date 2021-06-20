@@ -1,3 +1,4 @@
-import Spinner from './Spinner';
+import Spinner from './Spinner/Spinner';
+import StatusHint from './StatusHint/StatusHint';
 
-export { Spinner };
+export { Spinner, StatusHint };

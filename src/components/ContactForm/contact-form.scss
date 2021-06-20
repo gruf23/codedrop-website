@@ -5,6 +5,10 @@ form.contact-form {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-bottom: rem(80px);
+  .status {
+    margin-bottom: 1rem;
+  }
   &.disabled {
     & > *:not(.overlay, .post-feedback) {
       opacity: .4;

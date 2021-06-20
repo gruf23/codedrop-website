@@ -1,0 +1,24 @@
+@import "./src/styles/utility";
+@use "sass:color";
+
+.hint {
+  width: 100%;
+  box-sizing: border-box;
+  padding: rem(16px) rem(24px);
+  border-radius: rem(5px);
+  font-weight: 600;
+  font-size: rem(16px);
+  color: #303030;
+  letter-spacing: rem(0.5px);
+  text-transform: uppercase;
+  &.info {
+    background-color: #e2ecf5;
+  }
+  &.success {
+    background-color: #d6eac5;
+  }
+  &.error {
+    color: $color-error;
+    background-color: #f9cece;
+  }
+}

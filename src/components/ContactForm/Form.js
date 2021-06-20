@@ -5,17 +5,17 @@ import CDSelect from '../Inputs/Select/Select';
 import { Link } from 'react-router-dom';
 import { BlueBorderedButton } from '../Buttons';
 import { validateEmail, validateRequired } from '../../utils/validate';
-import { Spinner } from '../Misc';
+import { Spinner, StatusHint } from '../Misc';
 import { CSSTransition } from 'react-transition-group';
 
 const companyTypes = [
-  { value: 'startup-early', label: 'Startup - Early Stage' },
-  { value: 'startup-late', label: 'Startup - Late Stage' },
-  { value: 'sm-md-business', label: 'Small or Medium-sized Business' },
-  { value: 'enterprise', label: 'Enterprise' },
-  { value: 'non-profit', label: 'Non-profit' },
-  { value: 'other', label: 'Other' }
-]
+  {value: 'startup-early', label: 'Startup - Early Stage'},
+  {value: 'startup-late', label: 'Startup - Late Stage'},
+  {value: 'sm-md-business', label: 'Small or Medium-sized Business'},
+  {value: 'enterprise', label: 'Enterprise'},
+  {value: 'non-profit', label: 'Non-profit'},
+  {value: 'other', label: 'Other'}
+];
 
 const initialFieldsState = {
   name: undefined,
@@ -28,12 +28,11 @@ const initialFieldsState = {
   development: false,
   devops: false,
   qa: false
-}
+};
 
 function ContactForm() {
   const [processing, setProcessing] = useState(false);
-  const [postSuccess, setPostSuccess] = useState(false);
-  const [postFail, setPostFail] = useState(false);
+  const [postError, setPostError] = useState(false);
   const [errors, setErrors] = useState({
     name: '',
     email: '',
@@ -73,28 +72,24 @@ function ContactForm() {
         formData.append('file', file.name);
       });
 
-    fetch('https://httpbin.org/', {
+    fetch('https://httpbin.org/posasdt', {
       method: 'POST',
       body: formData
     })
-      .then(() => {
-        setPostSuccess(true);
-        setFields(() => initialFieldsState);
-        setTimeout(() => {
-          setPostSuccess(false);
-        }, 5000);
+      .then((data) => {
+        if (data.ok === true) {
+          // todo: redirect to success page
+          alert('ok')
+        } else {
+          setPostError(true);
+        }
       })
       .catch((e) => {
-        setPostFail(true);
-        setTimeout(() => {
-          setPostFail(false);
-        }, 3000);
+        setPostError(true);
         throw e;
       })
       .finally(() => {
-        setTimeout(() => {
-          setProcessing(false);
-        }, 3000);
+        setProcessing(false);
       });
   };
 
@@ -122,7 +117,7 @@ function ContactForm() {
       return {
         ...prevState,
         [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
-      }
+      };
     });
   };
   // todo: Attach unique files only
@@ -139,7 +134,7 @@ function ContactForm() {
         } else {
           return file.name !== fileToRemove;
         }
-      })
+      });
     });
   };
 
@@ -148,19 +143,22 @@ function ContactForm() {
       return {
         ...prevState,
         companyType: type.value
-      }
-    })
-  }
+      };
+    });
+  };
 
   return (
     <form className={`contact-form ${processing ? 'disabled' : ''}`} onSubmit={submitHandler}>
-
-      <CSSTransition in={processing} timeout={200} unmountOnExit>
+      <CSSTransition in={processing} timeout={200}>
         <div className="overlay">
           <Spinner/>
         </div>
       </CSSTransition>
-
+      {postError &&
+        <div className="full-width status">
+          <StatusHint type={'error'}>Something went wrong. Please, try again.</StatusHint>
+        </div>
+      }
       <div className={'half-width'}>
         <TextInput name={'name'}
                    placeholder={'John Doe'}
@@ -231,7 +229,9 @@ function ContactForm() {
         information on how we are committed to protect and respect your privacy, please check
         our <Link to="/privacy-policy" target="_blank">Privacy Policy</Link> of Codedrop.
       </p>
-      <BlueBorderedButton processing={processing} onClick={submitHandler}>Get Started</BlueBorderedButton>
+      <BlueBorderedButton processing={processing} onClick={submitHandler}>
+        Get Started
+      </BlueBorderedButton>
     </form>
   );
 }
