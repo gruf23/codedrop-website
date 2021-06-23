@@ -5,6 +5,7 @@ $base-content-width: 1440px;
 $column-width: 78px;
 $gutter-width: 24px;
 
+$eight-columns: $column-width * 8 + $gutter-width * 7;
 $ten-columns: $column-width * 10 + $gutter-width * 9;
 
 //colors

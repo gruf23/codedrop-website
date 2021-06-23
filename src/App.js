@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 
 import HomePage from './pages/Home';
 import ContactPage from './pages/Contact';
+import CollectionPage from './pages/Collection';
 
 function App() {
   useEffect(() => {
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <ContactPage/>
+          </Route>
+          <Route path="/collection">
+            <CollectionPage />
           </Route>
         </Switch>
 

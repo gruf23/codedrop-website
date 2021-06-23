@@ -14,7 +14,7 @@ import uiux from '../../assets/graphics/service-block/uiux.svg';
 
 function HomePage() {
   return (
-    <div className="wrapper">
+    <div className="wrapper home-page">
       <BgShape1/>
       <section className="first">
         <div className="text-block">

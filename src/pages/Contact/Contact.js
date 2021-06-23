@@ -3,7 +3,7 @@ import ContactForm from '../../components/ContactForm';
 
 function ContactPage() {
   return (
-    <div>
+    <div className={'wrapper'}>
       <section className={'contact-form-wrap'}>
         <div className="left">
           <h1>Contact Us</h1>

@@ -13,7 +13,7 @@ function Navigation(props) {
     <nav className={`${props.dir} ${props.align}`}>
       <Link to="/">Home</Link>
       <Link to="#">About</Link>
-      <Link to="#">Collection</Link>
+      <Link to="/collection">Collection</Link>
       <Link to="/contact">Contact</Link>
       <Link to="#">Carrer</Link>
     </nav>
