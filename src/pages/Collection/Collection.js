@@ -1,6 +1,7 @@
 import './collection.scss';
 import BgShape1 from '../../components/BgShapes/BgShape1';
-import { SelectedProjects, ProjectsGrid } from '../../components/Projects'
+import { SelectedProjects, ProjectsGrid } from '../../components/Projects';
+import ContactForm from '../../components/ContactForm';
 
 function CollectionPage() {
   return (
@@ -14,10 +15,15 @@ function CollectionPage() {
           partnerships.</p>
       </section>
       <section className="projects-main">
-        <SelectedProjects />
+        <SelectedProjects/>
       </section>
       <section className="projects-secondary">
-        <ProjectsGrid />
+        <ProjectsGrid/>
+      </section>
+      <section className="start-project">
+        <div className="sub">work with us</div>
+        <h2>Start a Project</h2>
+        <ContactForm/>
       </section>
     </div>
   );

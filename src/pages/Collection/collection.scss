@@ -27,5 +27,20 @@
       max-width: $base-content-width;
       margin-top: rem(32px);
     }
+    &.start-project {
+      margin-top: rem(56px);
+      width: 100%;
+      max-width: $eight-columns;
+      margin-left: auto;
+      margin-right: auto;
+      .sub {
+        font-weight: 600;
+        color: rgba($pseudo-black, .7);
+        letter-spacing: rem(1.12px);
+        line-height: rem(23px);
+        text-transform: uppercase;
+        margin-bottom: rem(8px);
+      }
+    }
   }
 }

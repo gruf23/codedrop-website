@@ -51,6 +51,9 @@ form.contact-form {
   .checkbox-area {
     margin-bottom: rem(16px);
   }
+  .drop-file-input {
+    margin-bottom: rem(32px);
+  }
   .disclaimer {
     width: 100%;
     font-size: rem(14px);
@@ -64,6 +67,6 @@ form.contact-form {
     }
   }
   .button {
-    margin-top: rem(16px);
+    margin-top: rem(32px);
   }
 }
