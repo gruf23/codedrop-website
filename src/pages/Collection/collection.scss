@@ -1,6 +1,10 @@
 @import "./src/styles/utility";
 
 .collection {
+  .bgShape1 {
+    max-height: 630px;
+    width: auto;
+  }
   section {
     margin: 0 auto;
     &.first {

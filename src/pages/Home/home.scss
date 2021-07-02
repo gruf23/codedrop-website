@@ -171,7 +171,7 @@
       }
       .selected-projects {
         width: 100%;
-        max-width: $base-content-width - $column-width * 4 - $gutter-width * 4;
+        max-width: $ten-columns;
         margin-left: auto;
         margin-right: auto;
       }
