@@ -31,13 +31,9 @@ const data = [
 ];
 
 function SelectedProjects(props) {
-  let items = [];
-  for (let i = 0; i < props.items; i += 1) {
-    items.push(<ProjectSummaryBig key={i} data={data[i]} direction={i % 2 === 0 ? 'ltr' : 'rtl'}/>);
-  }
   return (
     <div className="selected-projects">
-      {items}
+      {data.map((item, i) => <ProjectSummaryBig key={i} data={item} direction={i % 2 === 0 ? 'ltr' : 'rtl'}/>)}
     </div>
   );
 }

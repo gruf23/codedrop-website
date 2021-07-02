@@ -2,9 +2,10 @@ $baseFontSize: 18px;
 
 //grid sizes
 $base-content-width: 1440px;
-$column-width: 78px;
 $gutter-width: 24px;
+$column-width: ($base-content-width - $gutter-width * 11) / 12;
 
+$four-columns: $column-width * 4 + $gutter-width * 3;
 $eight-columns: $column-width * 8 + $gutter-width * 7;
 $ten-columns: $column-width * 10 + $gutter-width * 9;
 

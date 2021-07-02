@@ -5,7 +5,7 @@ import topRatedBadge from '../../assets/graphics/top-rated-badge.svg';
 import BgShape1 from '../../components/BgShapes/BgShape1';
 import { BlueButton, DecoratedLink } from '../../components/Buttons';
 import Capability from '../../components/Capability/Capability';
-import SelectedProjects from '../../components/Projects';
+import { SelectedProjects } from '../../components/Projects';
 
 import dev from '../../assets/graphics/service-block/dev.svg';
 import servers from '../../assets/graphics/service-block/servers.svg';

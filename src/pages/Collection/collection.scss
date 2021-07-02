@@ -1,10 +1,5 @@
 @import "./src/styles/utility";
 
-.bgShape1 {
-  top: 0;
-  left: 0;
-}
-
 .collection {
   section {
     margin: 0 auto;
@@ -17,10 +12,20 @@
       justify-content: center;
       padding-top: rem(80px);
       padding-bottom: rem(115px);
+      h1 {
+        margin-bottom: rem(32px);
+      }
     }
     &.projects-main {
       width: 100%;
       max-width: $ten-columns;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.projects-secondary {
+      width: 100%;
+      max-width: $base-content-width;
+      margin-top: rem(32px);
     }
   }
 }
