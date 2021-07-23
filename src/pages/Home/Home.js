@@ -3,6 +3,7 @@ import heroGraphics from '../../assets/graphics/homepage-hero.svg';
 import upworkLogo from '../../assets/graphics/Upwork-logo.svg';
 import topRatedBadge from '../../assets/graphics/top-rated-badge.svg';
 import BgShape1 from '../../components/BgShapes/BgShape1';
+import BgShapeBottom from '../../components/BgShapes/BgShapeBottom';
 import { BlueButton, DecoratedLink } from '../../components/Buttons';
 import Capability from '../../components/Capability/Capability';
 import { SelectedProjects } from '../../components/Projects';
@@ -119,6 +120,7 @@ function HomePage() {
         <p>We’ll reply you right the way. See yourself.</p>
         <BlueButton>contact us</BlueButton>
       </section>
+      <BgShapeBottom/>
     </div>
   );
 }
