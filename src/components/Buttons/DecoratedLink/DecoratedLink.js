@@ -1,4 +1,4 @@
-import './decorated-link.scss';
+import styles from './decorated-link.module.scss';
 
 /**
  * Decorated link with 'external link' icon
@@ -12,7 +12,7 @@ import './decorated-link.scss';
 function DecoratedLink(props) {
   const {href, classes, children, target = '_self'} = props;
   return (
-    <a className={`external-link ${classes}`} href={href} target={target}>
+    <a className={`${styles.externalLink} ${classes}`} href={href} target={target}>
       {children}
     </a>
   );
