@@ -1,0 +1,28 @@
+@use "sass:math";
+
+$baseFontSize: 18px;
+
+//grid sizes
+$base-content-width: 1200px;
+$gutter-width: 24px;
+$column-width: math.div(($base-content-width - $gutter-width * 11), 12);
+
+$four-columns: $column-width * 4 + $gutter-width * 3;
+$eight-columns: $column-width * 8 + $gutter-width * 7;
+$ten-columns: $column-width * 10 + $gutter-width * 9;
+
+//colors
+$pseudo-black: #303030;
+$brand-blue:   #3175F2;
+$brand-orange: #FFC900;
+
+$mid-grey:     #757575;
+
+$color-error:  #D02F2F;
+
+@function stripUnit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+@function rem($pxValue) {
+  @return math.div(stripUnit($pxValue), stripUnit($baseFontSize))rem;
+}
