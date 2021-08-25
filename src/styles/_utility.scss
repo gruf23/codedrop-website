@@ -24,5 +24,6 @@ $color-error:  #D02F2F;
   @return math.div($value, ($value * 0 + 1));
 }
 @function rem($pxValue) {
-  @return math.div(stripUnit($pxValue), stripUnit($baseFontSize))rem;
+  $val: math.div(stripUnit($pxValue), stripUnit($baseFontSize));
+  @return #{$val}rem;
 }
