@@ -5,13 +5,8 @@ import heroGraphics from '../../public/images/homepage-hero.svg';
 import BgShape1 from '../../src/components/BgShapes/BgShape1';
 import BgShapeBottom from '../../src/components/BgShapes/BgShapeBottom';
 import { BlueButton, DecoratedLink } from '../../src/components/Buttons';
-// import Capability from '../../src/components/Capability/Capability';
+import Capability from '../../src/components/Capability/Capability';
 import { SelectedProjects } from '../../src/components/Projects';
-
-import dev from '../../src/assets/graphics/service-block/dev.svg';
-import servers from '../../src/assets/graphics/service-block/servers.svg';
-import support from '../../src/assets/graphics/service-block/support.svg';
-import uiux from '../../src/assets/graphics/service-block/uiux.svg';
 
 function HomePage() {
   return (
@@ -65,38 +60,40 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section className="capabilities">
-        <div className="sub">capabilities</div>
+
+      <section className={styles.capabilities}>
+        <div className={styles.sub}>capabilities</div>
         <h2>We're The {'\n'}
           Whole Package</h2>
         <DecoratedLink href={''}>Learn more</DecoratedLink>
-        <div className="services">
-          {/*<Capability*/}
-          {/*  image={dev}*/}
-          {/*  heading={'Development'}*/}
-          {/*  sub={'Transform your buisness through technology'}*/}
-          {/*  link={'/services'}*/}
-          {/*/>*/}
-          {/*<Capability*/}
-          {/*  image={uiux}*/}
-          {/*  heading={'Design'}*/}
-          {/*  sub={'Elevate your user experience'}*/}
-          {/*  link={'/services'}*/}
-          {/*/>*/}
-          {/*<Capability*/}
-          {/*  image={servers}*/}
-          {/*  heading={'Cloud & DevOps'}*/}
-          {/*  sub={'Future-Proof and Scale Your Infrastructure'}*/}
-          {/*  link={'/services'}*/}
-          {/*/>*/}
-          {/*<Capability*/}
-          {/*  image={support}*/}
-          {/*  heading={'Support'}*/}
-          {/*  sub={'Keep Your Software Running At Its Best'}*/}
-          {/*  link={'/services'}*/}
-          {/*/>*/}
+        <div className={styles.services}>
+          <Capability
+            image='images/service-block/dev.svg'
+            heading={'Development'}
+            sub={'Transform your buisness through technology'}
+            link={'/services'}
+          />
+          <Capability
+            image='images/service-block/uiux.svg'
+            heading={'Design'}
+            sub={'Elevate your user experience'}
+            link={'/services'}
+          />
+          <Capability
+            image='images/service-block/servers.svg'
+            heading={'Cloud & DevOps'}
+            sub={'Future-Proof and Scale Your Infrastructure'}
+            link={'/services'}
+          />
+          <Capability
+            image='images/service-block/support.svg'
+            heading={'Support'}
+            sub={'Keep Your Software Running At Its Best'}
+            link={'/services'}
+          />
         </div>
       </section>
+
       <section className="work">
         <div className="text-block">
           <div className="sub">work</div>
