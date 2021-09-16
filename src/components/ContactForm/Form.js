@@ -2,7 +2,7 @@ import './contact-form.scss';
 import { useState, useEffect } from 'react';
 import { TextInput, TextArea, Checkbox, FileDrop } from '../Inputs';
 import CDSelect from '../Inputs/Select/Select';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 import { BlueBorderedButton } from '../Buttons';
 import { validateEmail, validateRequired } from '../../utils/validate';
 import { Spinner, StatusHint } from '../Misc';

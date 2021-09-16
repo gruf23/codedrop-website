@@ -1,4 +1,3 @@
-import './projects-grid.scss'
 import ProjectSummary from '../ProjectSummary/ProjectSummary';
 
 // static data for now

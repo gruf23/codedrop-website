@@ -1,4 +1,3 @@
-import './project-summary-big.scss'
 import { DecoratedLink } from '../../Buttons';
 
 /**

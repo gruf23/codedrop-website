@@ -1,7 +1,7 @@
 import './capabilities-block.scss';
 import BgShape from './bg-shape.svg';
 import LinkIcon from '../../assets/icons/external-link.svg';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 
 function Capability(props) {
   function handleClick() {
@@ -27,4 +27,5 @@ function Capability(props) {
   );
 }
 
-export default withRouter(Capability);
+// export default withRouter(Capability);
+export default Capability;

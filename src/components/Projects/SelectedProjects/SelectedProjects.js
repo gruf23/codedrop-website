@@ -1,4 +1,3 @@
-import './selected-projects.scss';
 import ProjectSummaryBig from '../ProjectSummaryBig/ProjectSummaryBig';
 
 import floranextHero from '../../../assets/graphics/projects/floranext-hero.jpeg';
