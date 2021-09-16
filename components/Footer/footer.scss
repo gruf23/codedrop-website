@@ -1,0 +1,103 @@
+@import "./src/styles/utility";
+
+footer {
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  min-height: rem(305px);
+  padding-top: rem(142px);
+  .content {
+    width: 100%;
+    max-width: $base-content-width;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  nav {
+    margin-left: auto;
+    a {
+      text-transform: capitalize;
+    }
+  }
+  .logo {
+    height: rem(30px);
+    width: auto;
+    margin-bottom: rem(16px);
+  }
+  .terms {
+    p, a {
+      font-size: rem(16px);
+      color: rgba(48, 48, 48, 0.70);
+      letter-spacing: 0.5px;
+    }
+    p {
+      margin-bottom: rem(8px);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .socials {
+    margin-top: rem(16px);
+    display: flex;
+    a {
+      margin-right: rem(8px);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    img {
+      height: rem(22px);
+      width: auto;
+    }
+  }
+  .emails {
+    padding-left: rem(40px);
+    min-width: $column-width * 3 + $gutter-width * 2;
+    h4 {
+      margin-bottom: rem(14px);
+    }
+    .label {
+      font-size: rem(16px);
+      line-height: rem(20px);
+      color: rgba(48, 48, 48, 0.70);
+      text-transform: capitalize;
+      margin-bottom: rem(3px);
+      font-weight: 600;
+    }
+    a {
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: rem(16px);
+      line-height: rem(16px);
+      color: $pseudo-black;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: rem(16px);
+      span {
+        position: relative;
+        z-index: 1;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        height: rem(6px);
+        width: 100%;
+        left: 0;
+        bottom: rem(-1px);
+        z-index: 0;
+        background: $brand-orange;
+      }
+    }
+  }
+}
