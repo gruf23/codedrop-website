@@ -147,59 +147,61 @@
   }
 }
 
+
+.work {
+  margin-top: rem(80px);
+  padding-bottom: rem(56px);
+  & > h3 {
+    text-align: center;
+    margin-top: rem(48px);
+    margin-bottom: rem(32px);
+  }
+}
+.workTextBlock {
+  width: 100%;
+  max-width: $column-width * 7 + $gutter-width * 8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  h2 {
+    margin-bottom: rem(24px);
+  }
+  p {
+    text-align: center;
+    width: 100%;
+    max-width: $column-width * 6 + $gutter-width * 6;
+  }
+}
+.workBlockSub {
+  align-self: flex-start;
+  padding-left: 4.2rem;
+}
+.selectedProjects {
+  width: 100%;
+  max-width: $ten-columns;
+  margin-left: auto;
+  margin-right: auto;
+}
+.exploreMoreProjects {
+  margin-top: rem(40px);
+  text-align: center;
+  h3 {
+    margin-bottom: rem(16px);
+  }
+  p {
+    width: 100%;
+    max-width: $column-width * 6 + $gutter-width * 5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: rem(32px);
+  }
+}
+
 .homePage {
   section {
     margin: 0 auto;
-    &.work {
-      margin-top: rem(80px);
-      padding-bottom: rem(56px);
-      .text-block {
-        width: 100%;
-        max-width: $column-width * 7 + $gutter-width * 8;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-left: auto;
-        margin-right: auto;
-        h2 {
-          margin-bottom: rem(24px);
-        }
-        .sub {
-          align-self: flex-start;
-          padding-left: .4rem;
-        }
-        p {
-          text-align: center;
-          width: 100%;
-          max-width: $column-width * 6 + $gutter-width * 6;
-        }
-      }
-      & > h3 {
-        text-align: center;
-        margin-top: rem(48px);
-        margin-bottom: rem(32px);
-      }
-      .selected-projects {
-        width: 100%;
-        max-width: $ten-columns;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .explore-more {
-        margin-top: rem(40px);
-        text-align: center;
-        h3 {
-          margin-bottom: rem(16px);
-        }
-        p {
-          width: 100%;
-          max-width: $column-width * 6 + $gutter-width * 5;
-          margin-left: auto;
-          margin-right: auto;
-          margin-bottom: rem(32px);
-        }
-      }
-    }
     &.contact {
       width: 100%;
       max-width: $column-width * 6 + $gutter-width * 5;

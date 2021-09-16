@@ -7,6 +7,7 @@ import BgShapeBottom from '../../src/components/BgShapes/BgShapeBottom';
 import { BlueButton, DecoratedLink } from '../../src/components/Buttons';
 import Capability from '../../src/components/Capability/Capability';
 import { SelectedProjects } from '../../src/components/Projects';
+import cx from 'classnames'
 
 function HomePage() {
   return (
@@ -94,9 +95,9 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="work">
-        <div className="text-block">
-          <div className="sub">work</div>
+      <section className={styles.work}>
+        <div className={styles.workTextBlock}>
+          <div className={cx(styles.sub, styles.workBlockSub)}>work</div>
           <h2>Building Bigger Ideas Together</h2>
           <p>Everyone working on your project is fully invested in its success. <br/>
             We care just as much about how your software looks and performs as we do about the
@@ -105,8 +106,10 @@ function HomePage() {
             long-term partnerships.</p>
         </div>
         <h3>Selected projects</h3>
-        <SelectedProjects/>
-        <div className="explore-more">
+        <div className={styles.selectedProjects}>
+          <SelectedProjects/>
+        </div>
+        <div className={styles.exploreMoreProjects}>
           <h3>Explore more</h3>
           <p>
             We always solve the most vigorous challenges by coming up with exclusive ideas in
@@ -116,6 +119,7 @@ function HomePage() {
           <DecoratedLink classes={'orange'} href={'#'}>all cases</DecoratedLink>
         </div>
       </section>
+
       <section className="contact">
         <h2>Have any questions left?<br/>
           Feel free to ask us.</h2>
