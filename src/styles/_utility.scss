@@ -3,7 +3,7 @@
 $baseFontSize: 18px;
 
 //grid sizes
-$base-content-width: 1200px;
+$base-content-width: 1440px;
 $gutter-width: 24px;
 $column-width: math.div(($base-content-width - $gutter-width * 11), 12);
 
@@ -26,4 +26,15 @@ $color-error:  #D02F2F;
 @function rem($pxValue) {
   $val: math.div(stripUnit($pxValue), stripUnit($baseFontSize));
   @return #{$val}rem;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: $base-content-width;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: $base-content-width) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
