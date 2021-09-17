@@ -106,9 +106,7 @@ function HomePage() {
             long-term partnerships.</p>
         </div>
         <h3>Selected projects</h3>
-        <div className={styles.selectedProjects}>
-          <SelectedProjects/>
-        </div>
+        <SelectedProjects classes={styles.selectedProjects}/>
         <div className={styles.exploreMoreProjects}>
           <h3>Explore more</h3>
           <p>
