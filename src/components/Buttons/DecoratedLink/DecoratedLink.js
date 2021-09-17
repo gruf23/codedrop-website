@@ -13,7 +13,7 @@ import cx from 'classnames'
 function DecoratedLink(props) {
   const {href, classes, children, target = '_self'} = props;
   return (
-    <a className={cx(styles.externalLink, classes)} href={href} target={target}>
+    <a className={cx(styles.externalLink, styles[classes])} href={href} target={target}>
       {children}
     </a>
   );
