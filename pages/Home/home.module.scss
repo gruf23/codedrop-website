@@ -199,21 +199,18 @@
   }
 }
 
-.homePage {
-  section {
-    margin: 0 auto;
-    &.contact {
-      width: 100%;
-      max-width: $column-width * 6 + $gutter-width * 5;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      p {
-        margin-bottom: rem(24px);
-      }
-    }
+.contact {
+  width: 100%;
+  max-width: $column-width * 6 + $gutter-width * 5;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  h2 {
+    margin-bottom: rem(8px);
   }
-
+  p {
+    margin-bottom: rem(24px);
+  }
 }
 
 .footer {

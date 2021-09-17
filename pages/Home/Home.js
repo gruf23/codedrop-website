@@ -118,7 +118,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="contact">
+      <section className={styles.contact}>
         <h2>Have any questions left?<br/>
           Feel free to ask us.</h2>
         <p>We’ll reply you right the way. See yourself.</p>
