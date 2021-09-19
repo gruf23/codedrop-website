@@ -1,5 +1,3 @@
-import shape from '../../assets/graphics/footer-bg-shape.svg';
-
 function BgShapeBottom() {
   const style = {
     position: 'absolute',
@@ -8,7 +6,7 @@ function BgShapeBottom() {
     bottom: 0
   };
   return (
-    <img className={'bottom-bg-shape'} src={shape} alt="" style={style}/>
+    <img className={'bottom-bg-shape'} src='images/footer-bg-shape.svg' alt="" style={style}/>
   )
 }
 

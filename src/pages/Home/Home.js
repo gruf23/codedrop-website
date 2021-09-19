@@ -1,7 +1,7 @@
 import styles from './home.module.scss';
 
-import BgShape1 from '../../src/components/BgShapes/BgShape1';
-import BgShapeBottom from '../../src/components/BgShapes/BgShapeBottom';
+import BgShape1 from '../../components/BgShapes/BgShape1';
+import BgShapeBottom from '../../components/BgShapes/BgShapeBottom';
 import { BlueButton, DecoratedLink } from '../../components/Buttons';
 import Capability from '../../components/Capability';
 import { SelectedProjects } from '../../components/Projects';

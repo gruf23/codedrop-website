@@ -1,5 +1,3 @@
-import shape from '../../assets/graphics/bg-shape-1.svg';
-
 function BgShape1() {
   const style = {
     position: 'absolute',
@@ -8,7 +6,7 @@ function BgShape1() {
     top: 0
   };
   return (
-    <img className={'bgShape1'} src={shape} alt="" style={style}/>
+    <img className={'bgShape1'} src='images/bg-shape-1.svg' alt="" style={style}/>
   )
 }
 
