@@ -1,5 +1,4 @@
 import styles from './capabilities-block.module.scss';
-import LinkIcon from '../../assets/icons/external-link.svg';
 // import { withRouter } from 'react-router-dom';
 
 function Capability(props) {
@@ -18,7 +17,7 @@ function Capability(props) {
         <p className={styles.sub}>{props.sub}</p>
         }
         {props.link &&
-        <img src={LinkIcon} alt=""/>
+        <img src='images/icons/external-link.svg' alt=""/>
         }
       </div>
       <img src={props.image} alt=""/>

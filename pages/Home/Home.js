@@ -1,12 +1,10 @@
-import Image from 'next/image'
 import styles from './home.module.scss';
-import heroGraphics from '../../public/images/homepage-hero.svg';
 
 import BgShape1 from '../../src/components/BgShapes/BgShape1';
 import BgShapeBottom from '../../src/components/BgShapes/BgShapeBottom';
-import { BlueButton, DecoratedLink } from '../../src/components/Buttons';
-import Capability from '../../src/components/Capability/Capability';
-import { SelectedProjects } from '../../src/components/Projects';
+import { BlueButton, DecoratedLink } from '../../components/Buttons';
+import Capability from '../../components/Capability';
+import { SelectedProjects } from '../../components/Projects';
 import cx from 'classnames'
 
 function HomePage() {
@@ -23,7 +21,7 @@ function HomePage() {
             convert visitors into repeat customers.</p>
           <BlueButton className={styles.heroCta} onClick={undefined}>book a free consultation</BlueButton>
         </div>
-        <Image src={heroGraphics} alt=""/>
+        <img src='/images/homepage-hero.svg' alt=""/>
       </section>
       <section className={styles.about}>
         <div>
