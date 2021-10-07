@@ -1,4 +1,5 @@
-import './text-input.module.scss';
+import styles from './text-input.module.scss';
+import cx from 'classnames'
 
 /**
  * Text input
@@ -16,8 +17,14 @@ function TextInput(props) {
   const label = props.required === true ? props.label + '*' : props.label
   const isValid = typeof props.error === 'undefined' || props.error.length === 0;
 
+  const classes = cx(
+    styles.wrap,
+    isValid ? '' : styles.invalid,
+    props.classes
+  );
+
   return (
-    <div className={`text-input ${isValid ? '' : 'invalid'}`}>
+    <div className={classes}>
       {typeof props.label !== 'undefined' ?
         <label htmlFor={props.name}>{label}</label> : ''
       }
