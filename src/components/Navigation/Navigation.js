@@ -1,5 +1,6 @@
 import styles from './navigation.module.scss';
-import Link from 'next/link'
+import Link from 'next/link';
+import cx from 'classnames';
 
 /**
  * Navigation component
@@ -9,15 +10,21 @@ import Link from 'next/link'
  * @constructor
  */
 function Navigation(props) {
+  const classList = cx(
+    styles.nav,
+    styles[props.dir],
+    styles[props.align],
+    props.classes
+  )
   return (
-    <nav className={`${styles.nav} ${styles[props.dir]} ${styles[props.align]}`}>
+    <nav className={classList}>
       <Link href="/">Home</Link>
       <Link href="#">About</Link>
       <Link href="/collection">Collection</Link>
       <Link href="/contact">Contact</Link>
       <Link href="#">Carrer</Link>
     </nav>
-  )
+  );
 }
 
 Navigation.defaultProps = {
