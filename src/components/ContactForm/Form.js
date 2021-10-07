@@ -1,4 +1,4 @@
-import './contact-form.scss';
+import './contact-form.module.scss';
 import { useState, useEffect } from 'react';
 import { TextInput, TextArea, Checkbox, FileDrop } from '../Inputs';
 import CDSelect from '../Inputs/Select/Select';
@@ -227,7 +227,7 @@ function ContactForm() {
         By ticking the checkboxes and confirming with “Get Started” you agree with processing your
         personal data for the purpose of entering a pre-contractual relationship. For more
         information on how we are committed to protect and respect your privacy, please check
-        our <Link to="/privacy-policy" target="_blank">Privacy Policy</Link> of Codedrop.
+        our <Link href={'/privacy-policy'} target={'_blank'}>Privacy Policy</Link> of Codedrop.
       </p>
       <BlueBorderedButton processing={processing} onClick={submitHandler}>
         Get Started

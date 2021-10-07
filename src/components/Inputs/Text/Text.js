@@ -1,4 +1,4 @@
-import './text-input.scss';
+import './text-input.module.scss';
 
 /**
  * Text input

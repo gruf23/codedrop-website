@@ -1,4 +1,4 @@
-import './textarea.scss';
+import './textarea.module.scss';
 
 /**
  * Text input

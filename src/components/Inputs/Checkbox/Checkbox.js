@@ -1,4 +1,4 @@
-import './checkbox.scss';
+import './checkbox.module.scss';
 
 /**
  * Text input

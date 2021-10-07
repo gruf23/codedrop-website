@@ -1,4 +1,4 @@
-import './status-hint.scss';
+import './status-hint.module.scss';
 
 /**
  * Status message and hint holder

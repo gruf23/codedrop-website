@@ -1,4 +1,4 @@
-import './file-drop.scss';
+import './file-drop.module.scss';
 
 import FileList from './FileList/FileList';
 import { useDropzone } from 'react-dropzone';

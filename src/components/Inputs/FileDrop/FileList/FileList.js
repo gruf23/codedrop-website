@@ -1,4 +1,4 @@
-import './file-list.scss';
+import './file-list.module.scss';
 
 /**
  * Files list for file input
