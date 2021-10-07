@@ -20,8 +20,8 @@ function Navigation(props) {
     <nav className={classList}>
       <Link href="/">Home</Link>
       <Link href="#">About</Link>
-      <Link href="/collection">Collection</Link>
-      <Link href="/contact">Contact</Link>
+      <Link href={'/collection'}>Collection</Link>
+      <Link href={'/contact'}>Contact</Link>
       <Link href="#">Carrer</Link>
     </nav>
   );
