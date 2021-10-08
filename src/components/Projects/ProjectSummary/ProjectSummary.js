@@ -1,3 +1,4 @@
+import styles from './project-summary.module.scss'
 import { DecoratedLink } from '../../Buttons';
 
 /**
@@ -13,16 +14,16 @@ import { DecoratedLink } from '../../Buttons';
  */
 function ProjectSummary(props) {
   return(
-    <div className="project-summary">
-      <div className="image">
+    <div className={styles.projectSummary}>
+      <div className={styles.image}>
         <div>
           <img src={props.data.image} alt={props.data.title}/>
         </div>
       </div>
-      <div className="content">
-        <div className="tags">{props.data.tags.join(', ')}</div>
+      <div className={styles.content}>
+        <div className={styles.tags}>{props.data.tags.join(', ')}</div>
         <h3>{props.data.title}</h3>
-        <p className="summary">{props.data.summary}</p>
+        <p className={styles.summary}>{props.data.summary}</p>
         <DecoratedLink href={props.data.websiteUrl}>Visit website</DecoratedLink>
       </div>
     </div>
