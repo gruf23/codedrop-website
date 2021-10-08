@@ -12,8 +12,8 @@
   input {
     width: 100%;
     height: rem(50px);
-    background: #FFFFFF;
-    border: 1px solid #D9DFE5;
+    background: #ffffff;
+    border: 1px solid #d9dfe5;
     border-radius: rem(5px);
     padding: 0 rem(15px);
     letter-spacing: rem(0.56px);
@@ -21,7 +21,7 @@
     box-shadow: 0 0 0 0 $brand-blue;
     outline: none;
     &::placeholder {
-      color: #B7BBC0;
+      color: #b7bbc0;
     }
     &:hover {
       border: 1px solid #c2c9d0;
@@ -33,11 +33,6 @@
       box-shadow: 0 0 0 1px $brand-blue;
     }
   }
-  .error-msg {
-    font-size: rem(14px);
-    color: $color-error;
-    letter-spacing: rem(1.5px);
-  }
 }
 .invalid {
   padding-bottom: rem(9px);
@@ -45,4 +40,9 @@
     border-color: $color-error;
     box-shadow: 0 0 0 1px $color-error;
   }
+}
+.errorMsg {
+  font-size: rem(14px);
+  color: $color-error;
+  letter-spacing: rem(1.5px);
 }

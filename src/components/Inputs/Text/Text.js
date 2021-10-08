@@ -31,7 +31,7 @@ function TextInput(props) {
       <input id={props.name} name={props.name} type="text"
              placeholder={props.placeholder} onChange={(e) => props.onChangeCallback(e)} value={props.value} />
       {!isValid ?
-        <p className="error-msg">{props.error}</p> : ''
+        <p className={styles.errorMsg}>{props.error}</p> : ''
       }
     </div>
   );

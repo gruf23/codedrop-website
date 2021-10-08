@@ -1,14 +1,7 @@
 @import "./src/styles/utility";
 
-.text-input {
+.wrap {
   padding-bottom: rem(32px);
-  &.invalid {
-    padding-bottom: rem(9px);
-    textarea {
-      border-color: $color-error;
-      box-shadow: 0 0 0 1px $color-error;
-    }
-  }
   label {
     font-weight: 600;
     font-size: rem(14px);
@@ -42,9 +35,18 @@
       box-shadow: 0 0 0 1px $brand-blue;
     }
   }
-  .error-msg {
-    font-size: rem(14px);
-    color: $color-error;
-    letter-spacing: rem(1.5px);
+}
+
+.invalid {
+  padding-bottom: rem(9px);
+  textarea {
+    border-color: $color-error;
+    box-shadow: 0 0 0 1px $color-error;
   }
+}
+
+.errorMsg {
+  font-size: rem(14px);
+  color: $color-error;
+  letter-spacing: rem(1.5px);
 }
