@@ -1,6 +1,6 @@
 @import "./src/styles/utility";
 
-.file-list {
+.fileList {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,41 +32,44 @@
       margin-right: rem(6px);
       background: url("./paperclip.svg") no-repeat center;
     }
-    &.cannot-upload {
-      color: $color-error;
-      &:before {
-        display: none;
-      }
-    }
-    .remove-file {
-      position: relative;
-      display: inline-block;
-      height: 1em;
-      width: 1em;
-      margin-left: rem(5px);
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        width: .8em;
-        height: .1em;
-        background-color: #bcc1c5;
-        left: 0;
-        top: 50%;
-        border-radius: .2em;
-      }
-      &:before {
-        transform: rotate(45deg);
-      }
-      &:after {
-        transform: rotate(-45deg);
-      }
-      &:hover {
-        &:before,
-        &:after {
-          background-color: $color-error;
-        }
-      }
+  }
+}
+.cannotUpload {
+  color: $color-error;
+  &:before {
+    display: none;
+  }
+}
+.removeFile {
+  position: relative;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin-left: rem(5px);
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: .8em;
+    height: .1em;
+    background-color: #bcc1c5;
+    left: 0;
+    top: 50%;
+    border-radius: .2em;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+  &:hover {
+    &:before,
+    &:after {
+      background-color: $color-error;
     }
   }
+}
+.errorMessage {
+  color: $color-error;
 }
