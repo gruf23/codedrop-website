@@ -4,6 +4,13 @@
   @extend .wrapper;
 }
 
+.bgBigTriangleLeftShape {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 20vh;
+}
+
 .wrap {
   padding-top: rem(80px);
   width: 100%;
