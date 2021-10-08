@@ -8,6 +8,15 @@
   margin-top: rem(24px);
 }
 
+.bgShape {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  max-height: 630px;
+  width: auto;
+}
+
 .first {
   width: 100%;
   max-width: 1440px;

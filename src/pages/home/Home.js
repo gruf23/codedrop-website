@@ -10,7 +10,7 @@ import cx from 'classnames'
 function HomePage() {
   return (
     <div className={styles.content}>
-      <BgShape1/>
+      <BgShape1 classNames={styles.bgShape}/>
       <section className={styles.first}>
         <div className="text-block">
           <h2>We Design, Build &{'\n'}

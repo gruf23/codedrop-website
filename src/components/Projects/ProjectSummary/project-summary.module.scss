@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "src/styles/utility";
 
 .projectSummary {
@@ -37,7 +38,7 @@
     display: block;
     content: "";
     width: 100%;
-    padding-top: (9 / 16) * 100%;
+    padding-top: math.div(9, 16) * 100%;
   }
   & > div {
     position: absolute;
