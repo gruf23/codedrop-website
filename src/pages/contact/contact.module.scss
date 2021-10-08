@@ -1,0 +1,34 @@
+@import "./src/styles/utility";
+
+.content {
+  @extend .wrapper;
+}
+
+.bgBigTriangleLeftShape {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 20vh;
+}
+
+.wrap {
+  padding-top: rem(80px);
+  width: 100%;
+  max-width: $base-content-width;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  & > form {
+    padding-top: rem(80px);
+    flex: 1;
+  }
+}
+.left {
+  width: $column-width * 4 + $gutter-width * 3;
+  margin-right: $gutter-width;
+  p {
+    margin-top: rem(8px);
+  }
+}
+

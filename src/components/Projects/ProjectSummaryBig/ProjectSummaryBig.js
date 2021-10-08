@@ -1,5 +1,6 @@
-import './project-summary-big.scss'
+import styles from './project-summary-big.module.scss';
 import { DecoratedLink } from '../../Buttons';
+import cx from 'classnames';
 
 /**
  * Big project summary block
@@ -16,20 +17,20 @@ import { DecoratedLink } from '../../Buttons';
 function ProjectSummaryBig(props) {
 
   return (
-    <div className={`project-summary-big ${props.direction}`}>
-      <div className="content">
-        <div className="tags">{props.data.tags.join(', ')}</div>
+    <div className={cx(styles.projectSummaryBig, styles[props.direction])}>
+      <div className={styles.content}>
+        <div className={styles.tags}>{props.data.tags.join(', ')}</div>
         <h3>{props.data.title}</h3>
-        <p className="summary">{props.data.summary}</p>
+        <p className={styles.summary}>{props.data.summary}</p>
         <DecoratedLink href={props.data.websiteUrl}>Visit website</DecoratedLink>
       </div>
-      <div className="image">
+      <div className={styles.image}>
         <div>
           <img src={props.data.image} alt={props.data.title}/>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default ProjectSummaryBig;

@@ -1,14 +1,6 @@
-import shape from '../../assets/graphics/bg-shape-1.svg';
-
-function BgShape1() {
-  const style = {
-    position: 'absolute',
-    zIndex: '-1',
-    left: 0,
-    top: 0
-  };
+function BgShape1(props) {
   return (
-    <img className={'bgShape1'} src={shape} alt="" style={style}/>
+    <img className={props.classNames} src='images/bg-shape-1.svg' alt=""/>
   )
 }
 

@@ -1,4 +1,4 @@
-import './file-list.scss';
+import styles from './file-list.module.scss';
 
 /**
  * Files list for file input
@@ -13,25 +13,25 @@ function FileList(props) {
   const acceptedFiles = files.filter((file) => !file.errors);
   const rejectedFiles = files.filter((file) => file.errors);
   return (
-    <div className="file-list">
+    <div className={styles.fileList}>
       {acceptedFiles.map((file, index) => {
         return (
           <span key={index}>
             {file.name}
-            <span className="remove-file"
+            <span className={styles.removeFile}
                   onClick={(e) => props.onRemove(acceptedFiles[index].name, e)}></span>
           </span>
         );
       })}
       {
         rejectedFiles.length > 0 &&
-        <p className="error-message">some files cannot be uploaded:</p>
+        <p className={styles.errorMessage}>some files cannot be uploaded:</p>
       }
       {rejectedFiles.map((file, index) => {
         return (
-          <span className={'cannot-upload'} key={index}>
+          <span className={styles.cannotUpload} key={index}>
               {file.file.name}
-            <span className="remove-file"
+            <span className={styles.removeFile}
                   onClick={(e) => props.onRemove(rejectedFiles[index].file.name, e)}></span>
             </span>
         );

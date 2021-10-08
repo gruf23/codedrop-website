@@ -1,5 +1,6 @@
-import './navigation.scss';
-import { Link } from 'react-router-dom';
+import styles from './navigation.module.scss';
+import Link from 'next/link';
+import cx from 'classnames';
 
 /**
  * Navigation component
@@ -9,15 +10,21 @@ import { Link } from 'react-router-dom';
  * @constructor
  */
 function Navigation(props) {
-  return (
-    <nav className={`${props.dir} ${props.align}`}>
-      <Link to="/">Home</Link>
-      <Link to="#">About</Link>
-      <Link to="/collection">Collection</Link>
-      <Link to="/contact">Contact</Link>
-      <Link to="#">Carrer</Link>
-    </nav>
+  const classList = cx(
+    styles.nav,
+    styles[props.dir],
+    styles[props.align],
+    props.classes
   )
+  return (
+    <nav className={classList}>
+      <Link href="/">Home</Link>
+      <Link href="#">About</Link>
+      <Link href={'/collection'}>Collection</Link>
+      <Link href={'/contact'}>Contact</Link>
+      <Link href="#">Carrer</Link>
+    </nav>
+  );
 }
 
 Navigation.defaultProps = {

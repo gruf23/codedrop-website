@@ -1,4 +1,5 @@
-import './status-hint.scss';
+import styles from './status-hint.module.scss';
+import cx from 'classnames'
 
 /**
  * Status message and hint holder
@@ -7,8 +8,12 @@ import './status-hint.scss';
  * @constructor
  */
 function StatusHint(props) {
+  const classes = cx(
+    styles.hint,
+    styles[props.type]
+  )
   return (
-    <div className={`hint ${props.type}`}>
+    <div className={classes}>
       {props.children}
     </div>
   );

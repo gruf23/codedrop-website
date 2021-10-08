@@ -1,8 +1,12 @@
-import './blue-bordered.scss'
+import styles from './blue-bordered.module.scss'
+import cx from 'classnames'
 
-function BlueBorderedButton({children, onClick = undefined}) {
+function BlueBorderedButton({className, children, onClick = undefined}) {
   return (
-    <button className={'button blue-bordered'} onClick={onClick}><span>{children}</span></button>
+    <button className={cx(
+      styles.blueBordered,
+      className
+    )} onClick={onClick}><span>{children}</span></button>
   )
 }
 

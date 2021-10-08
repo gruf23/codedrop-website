@@ -1,4 +1,4 @@
-import './checkbox.scss';
+import styles from './checkbox.module.scss';
 
 /**
  * Text input
@@ -11,11 +11,12 @@ import './checkbox.scss';
  */
 function Checkbox(props) {
   return (
-    <div className={'checkbox-input'}>
-      <input type="checkbox" checked={props.checked} name={props.name} id={props.name} onChange={props.onChangeCallback}/>
+    <div className={styles.wrap}>
+      <input type="checkbox" checked={props.checked} name={props.name} id={props.name}
+             onChange={props.onChangeCallback}/>
       <label htmlFor={props.name}>{props.label}</label>
     </div>
-  )
+  );
 }
 
-export default Checkbox
+export default Checkbox;

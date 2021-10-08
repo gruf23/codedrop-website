@@ -1,0 +1,61 @@
+@import "./src/styles/utility";
+
+.wrap {
+  width: 100%;
+}
+.dropzone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: rem(16px);
+  background-color: #F8FAFC;
+  border: 1px solid #D9DFE5;
+  border-radius: rem(5px);
+  transition: background-color .3s, box-shadow .3s;
+  cursor: pointer;
+  svg {
+    transition: fill .3s;
+  }
+  &:hover {
+    background-color: darken(#F8FAFC, 3%);
+    svg {
+      fill: $brand-blue;
+    }
+  }
+}
+.drag {
+  box-shadow: 0 0 0 rgba($brand-blue, 0.4);
+  animation: pulse 1.5s infinite;
+  svg {
+    fill: $brand-blue;
+  }
+}
+
+.label {
+  text-align: center;
+  p {
+    text-transform: uppercase;
+    margin-top: rem(10px);
+    font-weight: 600;
+    font-size: rem(14px);
+    color: #818181;
+    letter-spacing: rem(1.5px);
+    .limitation {
+      display: block;
+      font-size: .8em;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($brand-blue, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 1rem rgba($brand-blue, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($brand-blue, 0);
+  }
+}

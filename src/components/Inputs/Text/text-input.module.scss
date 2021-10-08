@@ -1,0 +1,48 @@
+@import "./src/styles/utility";
+
+.wrap {
+  padding-bottom: rem(32px);
+  label {
+    font-weight: 600;
+    font-size: rem(14px);
+    text-transform: uppercase;
+    letter-spacing: rem(1.5px);
+    margin-bottom: rem(8px);
+  }
+  input {
+    width: 100%;
+    height: rem(50px);
+    background: #ffffff;
+    border: 1px solid #d9dfe5;
+    border-radius: rem(5px);
+    padding: 0 rem(15px);
+    letter-spacing: rem(0.56px);
+    transition: .3s;
+    box-shadow: 0 0 0 0 $brand-blue;
+    outline: none;
+    &::placeholder {
+      color: #b7bbc0;
+    }
+    &:hover {
+      border: 1px solid #c2c9d0;
+    }
+    &:active:not(.invalid),
+    &:focus:not(.invalid),
+    &:focus-visible:not(.invalid) {
+      border-color: $brand-blue;
+      box-shadow: 0 0 0 1px $brand-blue;
+    }
+  }
+}
+.invalid {
+  padding-bottom: rem(9px);
+  input {
+    border-color: $color-error;
+    box-shadow: 0 0 0 1px $color-error;
+  }
+}
+.errorMsg {
+  font-size: rem(14px);
+  color: $color-error;
+  letter-spacing: rem(1.5px);
+}

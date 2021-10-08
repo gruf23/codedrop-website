@@ -1,0 +1,43 @@
+@import "./src/styles/utility";
+
+.wrap {
+  margin-bottom: rem(16px);
+  line-height: 1em;
+  cursor: pointer;
+  label {
+    position: relative;
+    font-size: rem(16px);
+    padding-left: rem(26px);
+    &:before,
+    &:after {
+      position: absolute;
+      left: 0;
+      top: rem(1px);
+      content: '';
+      height: rem(18px);
+      width: rem(18px);
+    }
+    &:before {
+      background: #FFFFFF;
+      border: rem(2px) solid #D9DFE5;
+      border-radius: rem(5px);
+      z-index: 1;
+    }
+    &:after {
+      background: url("./check-mark.svg") no-repeat center;
+      opacity: 0;
+      z-index: 2;
+      transition: .3s;
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+    &:checked {
+      & ~ label {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

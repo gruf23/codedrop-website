@@ -1,8 +1,8 @@
-import './blue.scss'
+import styles from './blue.module.scss'
 
-function BlueButton({children, onClick = undefined}) {
+function BlueButton({className, children, onClick = undefined}) {
   return (
-    <button className={'button blue-button'} onClick={onClick}><span>{children}</span></button>
+    <button className={`${styles.blueButton} ${className}`} onClick={onClick}><span>{children}</span></button>
   )
 }
 

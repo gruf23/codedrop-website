@@ -1,12 +1,13 @@
+import styles from './header.module.scss';
 import Navigation from '../Navigation';
-import { Link } from 'react-router-dom';
-import './header.scss';
-import logo from '../../assets/cd-logo-vertical.svg'
+import Link from 'next/link'
 
 function Header() {
   return (
-    <header>
-      <Link to="/"><img src={logo} alt="CodeDrop logo"/></Link>
+    <header className={styles.header}>
+      <Link href="/">
+        <a><img src='images/cd-logo-vertical.svg' alt="CodeDrop logo"/></a>
+      </Link>
       <Navigation />
     </header>
   );

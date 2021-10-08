@@ -1,0 +1,67 @@
+@import "./src/styles/utility";
+@import "../button";
+
+.blueButton {
+  @extend .button;
+  position: relative;
+  background-image: linear-gradient(-45deg, #3779f4 0%, #1961e9 100%);
+  border-radius: rem(26px);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  height: rem(52px);
+  padding-left: rem(32px);
+  padding-right: rem(32px);
+  transition: .3s;
+  cursor: pointer;
+  overflow: hidden;
+  span {
+    position: relative;
+    z-index: 3;
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -60%;
+    width: 110%;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding-bottom: 100%;
+    border-radius: 50%;
+    transform: translate3d(-80%, -50%, 0);
+    transition: transform .6s, opacity .2s;
+    opacity: 0;
+    z-index: 1;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -60%;
+    width: 110%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-bottom: 100%;
+    border-radius: 50%;
+    transform: translate3d(0, -50%, 0);
+    transition: transform .4s, opacity .2s;
+    opacity: 0;
+    z-index: 2;
+  }
+  &:hover {
+    border-radius: rem(3px);
+    &:before,
+    &:after {
+      transform: translate3d(50%, -50%, 0);
+      opacity: 1;
+    }
+  }
+  &:active {
+    background-image: linear-gradient(-45deg, #1961e9 0%, #1961e9 100%);
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}

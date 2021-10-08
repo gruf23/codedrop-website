@@ -1,4 +1,4 @@
-import './projects-grid.scss'
+import styles from './projects-grid.module.scss';
 import ProjectSummary from '../ProjectSummary/ProjectSummary';
 
 // static data for now
@@ -28,7 +28,7 @@ const data = [
 
 function ProjectsGrid() {
   return (
-    <div className="projects">
+    <div className={styles.projects}>
       {data.map((item, i) => <ProjectSummary key={i} data={item}/>)}
     </div>
   );

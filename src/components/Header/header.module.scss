@@ -1,0 +1,14 @@
+@import "./src/styles/utility";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  max-width: $base-content-width;
+  width: 100%;
+  margin: 0 auto;
+  a {
+    cursor: pointer;
+  }
+}

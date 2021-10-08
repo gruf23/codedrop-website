@@ -1,6 +1,6 @@
-import shape from '../../assets/graphics/footer-bg-shape.svg';
+import cx from 'classnames'
 
-function BgShapeBottom() {
+function BgShapeBottom(props) {
   const style = {
     position: 'absolute',
     zIndex: '-1',
@@ -8,7 +8,9 @@ function BgShapeBottom() {
     bottom: 0
   };
   return (
-    <img className={'bottom-bg-shape'} src={shape} alt="" style={style}/>
+    <img className={cx(
+      'bottom-bg-shape',
+      props.classNames)} src='images/footer-bg-shape.svg' alt="" style={style}/>
   )
 }
 
