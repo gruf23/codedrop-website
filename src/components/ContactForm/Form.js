@@ -1,12 +1,12 @@
-import './contact-form.module.scss';
+import styles from './contact-form.module.scss';
 import { useState, useEffect } from 'react';
-import { TextInput, TextArea, Checkbox, FileDrop } from '../Inputs';
-import CDSelect from '../Inputs/Select/Select';
+import { TextInput, TextArea, Checkbox, FileDrop, Select } from '../Inputs';
 import Link from 'next/link'
 import { BlueBorderedButton } from '../Buttons';
 import { validateEmail, validateRequired } from '../../utils/validate';
 import { Spinner, StatusHint } from '../Misc';
 import { CSSTransition } from 'react-transition-group';
+import cx from 'classnames'
 
 const companyTypes = [
   {value: 'startup-early', label: 'Startup - Early Stage'},
@@ -148,18 +148,24 @@ function ContactForm() {
   };
 
   return (
-    <form className={`contact-form ${processing ? 'disabled' : ''}`} onSubmit={submitHandler}>
+    <form className={cx(
+      styles.form,
+      processing ? styles.formDisabled : ''
+    )} onSubmit={submitHandler}>
       <CSSTransition in={processing} timeout={200}>
-        <div className="overlay">
+        <div className={styles.overlay}>
           <Spinner/>
         </div>
       </CSSTransition>
       {postError &&
-        <div className="full-width status">
+        <div className={cx(
+          styles.wFull,
+          styles.status
+        )}>
           <StatusHint type={'error'}>Something went wrong. Please, try again.</StatusHint>
         </div>
       }
-      <div className={'half-width'}>
+      <div className={cx(styles.wHalf)}>
         <TextInput name={'name'}
                    placeholder={'John Doe'}
                    label={'Name'}
@@ -169,7 +175,7 @@ function ContactForm() {
                    error={errors.name.message}
         />
       </div>
-      <div className={'half-width'}>
+      <div className={cx(styles.wHalf)}>
         <TextInput name={'email'}
                    placeholder={'john@example.com'}
                    label={'E-mail'}
@@ -179,15 +185,15 @@ function ContactForm() {
                    error={errors.email.message}
         />
       </div>
-      <div className={'half-width'}>
+      <div className={cx(styles.wHalf)}>
         <TextInput name={'companyName'}
                    label={'Company name'}
                    onChangeCallback={changeHandler}
                    value={fields.companyName || ''}
         />
       </div>
-      <div className={'half-width'}>
-        <CDSelect name={'company-type'}
+      <div className={cx(styles.wHalf)}>
+        <Select name={'company-type'}
                   label={'Company type'}
                   options={companyTypes}
                   isSearchable={false}
@@ -195,10 +201,16 @@ function ContactForm() {
                   placeholder={'Pick One...'}
                   onChange={changeCompanyTypeHandler}/>
       </div>
-      <div className="full-width legend-holder">
-        <span className="legend">I`m looking for</span>
+      <div className={cx(
+        styles.wFull,
+        styles.legendHolder
+      )}>
+        <span className={styles.legend}>I`m looking for</span>
       </div>
-      <div className="half-width checkbox-area">
+      <div className={cx(
+        styles.wHalf,
+        styles.checkboxes
+      )}>
         <Checkbox label={'Consulting'} name={'consulting'} onChangeCallback={changeHandler}
                   checked={fields.consulting}/>
         <Checkbox label={'Design'} name={'design'} onChangeCallback={changeHandler}
@@ -206,13 +218,13 @@ function ContactForm() {
         <Checkbox label={'Development'} name={'development'} onChangeCallback={changeHandler}
                   checked={fields.development}/>
       </div>
-      <div className="half-width">
+      <div className={cx(styles.wHalf)}>
         <Checkbox label={'Cloud & DevOps'} name={'devops'} onChangeCallback={changeHandler}
                   checked={fields.devops}/>
         <Checkbox label={'Quality Assurance'} name={'qa'} onChangeCallback={changeHandler}
                   checked={fields.qa}/>
       </div>
-      <div className="full-width">
+      <div className={cx(styles.wFull)}>
         <TextArea name={'message'} label={'message'}
                   placeholder={'What`s on your mind?'}
                   required={true} error={errors.message.message}
@@ -220,16 +232,16 @@ function ContactForm() {
                   value={fields.message || ''}>
         </TextArea>
       </div>
-      <div className="full-width">
-        <FileDrop onDrop={fileDropHandler} onRemove={fileRemoveHandler} filesList={files}/>
+      <div className={cx(styles.wFull)}>
+        <FileDrop className={styles.files} onDrop={fileDropHandler} onRemove={fileRemoveHandler} filesList={files}/>
       </div>
-      <p className="disclaimer">
+      <p className={styles.disclaimer}>
         By ticking the checkboxes and confirming with “Get Started” you agree with processing your
         personal data for the purpose of entering a pre-contractual relationship. For more
         information on how we are committed to protect and respect your privacy, please check
         our <Link href={'/privacy-policy'} target={'_blank'}>Privacy Policy</Link> of Codedrop.
       </p>
-      <BlueBorderedButton processing={processing} onClick={submitHandler}>
+      <BlueBorderedButton className={styles.button} processing={processing} onClick={submitHandler}>
         Get Started
       </BlueBorderedButton>
     </form>

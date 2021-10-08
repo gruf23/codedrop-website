@@ -19,7 +19,10 @@ function FileDrop(props) {
   )
 
   return (
-    <div className={styles.wrap}>
+    <div className={cx(
+      styles.wrap,
+      props.className
+    )}>
       <div {...getRootProps({className: dropzoneClassNames})}>
         <input {...getInputProps()} />
         <div className={styles.label}>
