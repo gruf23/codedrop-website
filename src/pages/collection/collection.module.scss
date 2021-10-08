@@ -1,0 +1,59 @@
+@import "./src/styles/utility";
+
+.content {
+  @extend .wrapper;
+  .bgShape1 {
+    max-height: 630px;
+    width: auto;
+  }
+  section {
+    margin: 0 auto;
+  }
+}
+.bgShape {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  max-height: 630px;
+  width: auto;
+}
+.first {
+  width: 100%;
+  max-width: $eight-columns;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: rem(80px);
+  padding-bottom: rem(115px);
+  h1 {
+    margin-bottom: rem(32px);
+  }
+}
+.projectsMain {
+  width: 100%;
+  max-width: $ten-columns;
+  margin-left: auto;
+  margin-right: auto;
+}
+.projectsSecondary {
+  width: 100%;
+  max-width: $base-content-width;
+  margin-top: rem(32px);
+}
+.startProject {
+  margin-top: rem(56px);
+  width: 100%;
+  max-width: $eight-columns;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sub {
+  font-weight: 600;
+  color: rgba($pseudo-black, .7);
+  letter-spacing: rem(1.12px);
+  line-height: rem(23px);
+  text-transform: uppercase;
+  margin-bottom: rem(8px);
+}
