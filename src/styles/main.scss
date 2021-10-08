@@ -16,7 +16,7 @@ body {
 
 #__next {
   & > div {
-    min-height: 100vh;
+    min-height: calc(100vh - 375px);
     display: flex;
     flex-direction: column;
     & > div {

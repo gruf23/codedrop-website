@@ -7,20 +7,20 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.content}>
         <div>
-          <img className={styles.logo} src='images/cd-logo-horizontal.svg' alt="CodeDrop"/>
+          <img className={styles.logo} src='/images/cd-logo-horizontal.svg' alt="CodeDrop"/>
           <div className={styles.terms}>
             <p>© 2020 All Rights Reserved, Codedrop</p>
             <p><Link href={'/privacy-policy'}>Privacy Policy</Link></p>
           </div>
           <div className={styles.socials}>
             <a href="https://example.com/" target="_blank">
-              <img src='images/icons/github.svg' alt="Our github"/>
+              <img src='/images/icons/github.svg' alt="Our github"/>
             </a>
             <a href="https://example.com/" target="_blank">
-              <img src='images/icons/behance.svg' alt="Our behance"/>
+              <img src='/images/icons/behance.svg' alt="Our behance"/>
             </a>
             <a href="https://example.com/" target="_blank">
-              <img src='images/icons/instagram.svg' alt="Our instagram"/>
+              <img src='/images/icons/instagram.svg' alt="Our instagram"/>
             </a>
           </div>
         </div>

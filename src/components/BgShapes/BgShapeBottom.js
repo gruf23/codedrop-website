@@ -10,7 +10,7 @@ function BgShapeBottom(props) {
   return (
     <img className={cx(
       'bottom-bg-shape',
-      props.classNames)} src='images/footer-bg-shape.svg' alt="" style={style}/>
+      props.classNames)} src='/images/footer-bg-shape.svg' alt="" style={style}/>
   )
 }
 

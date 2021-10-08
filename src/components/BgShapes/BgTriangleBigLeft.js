@@ -5,7 +5,7 @@ function BgTriangleBigLeft(props) {
     <img className={cx(
       'bgShape1',
       props.classNames
-    )} src='images/bg-shape-grey-b-l.svg' alt=""/>
+    )} src='/images/bg-shape-grey-b-l.svg' alt=""/>
   )
 }
 

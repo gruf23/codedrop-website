@@ -1,0 +1,29 @@
+@import "./src/styles/utility";
+
+.content {
+  @extend .wrapper;
+}
+
+.bgBigTriangleLeftShape {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: calc(50vh - 333px);
+}
+.wrap {
+  width: 100%;
+  max-width: $ten-columns;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    margin-bottom: rem(32px);
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
