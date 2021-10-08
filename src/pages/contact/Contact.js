@@ -1,11 +1,11 @@
-import './contact.module.scss'
+import styles from './contact.module.scss'
 import ContactForm from '../../components/ContactForm';
 
 function ContactPage() {
   return (
-    <div className={'wrapper'}>
-      <section className={'contact-form-wrap'}>
-        <div className="left">
+    <div className={styles.content}>
+      <section className={styles.wrap}>
+        <div className={styles.left}>
           <h1>Contact Us</h1>
           <p>
             Tell us about your project.<br/>

@@ -11,14 +11,14 @@
   color: #303030;
   letter-spacing: rem(0.5px);
   text-transform: uppercase;
-  &.info {
-    background-color: #e2ecf5;
-  }
-  &.success {
-    background-color: #d6eac5;
-  }
-  &.error {
-    color: $color-error;
-    background-color: #f9cece;
-  }
+}
+.info {
+  background-color: #e2ecf5;
+}
+.success {
+  background-color: #d6eac5;
+}
+.error {
+  color: $color-error;
+  background-color: #f9cece;
 }

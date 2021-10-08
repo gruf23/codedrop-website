@@ -8,7 +8,7 @@
   padding-bottom: rem(80px);
 }
 .formDisabled {
-  & > *:not(.overlay, .post-feedback) {
+  & > * {
     opacity: .4;
   }
 }
@@ -25,9 +25,9 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity .3s;
-  &.enter-done {
-    opacity: 1;
-  }
+}
+.ovEnterDone {
+  opacity: 1;
 }
 .status {
   margin-bottom: 1rem;

@@ -152,7 +152,9 @@ function ContactForm() {
       styles.form,
       processing ? styles.formDisabled : ''
     )} onSubmit={submitHandler}>
-      <CSSTransition in={processing} timeout={200}>
+      <CSSTransition in={processing} timeout={200} classNames={{
+        enterDone: styles.ovEnterDone,
+      }}>
         <div className={styles.overlay}>
           <Spinner/>
         </div>
