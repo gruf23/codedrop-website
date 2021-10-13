@@ -11,7 +11,7 @@ body {
   background-size: 47px 47px;
   font-family: 'Source Sans Pro', 'Roboto', sans-serif;
   color: $pseudo-black;
-  letter-spacing: .5px;
+  letter-spacing: rem(.5px);
 }
 
 #__next {
