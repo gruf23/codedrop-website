@@ -8,8 +8,11 @@ $gutter-width: 24px;
 $column-width: math.div(($base-content-width - $gutter-width * 11), 12);
 
 $four-columns: $column-width * 4 + $gutter-width * 3;
+$six-columns: $column-width * 6 + $gutter-width * 5;
 $eight-columns: $column-width * 8 + $gutter-width * 7;
 $ten-columns: $column-width * 10 + $gutter-width * 9;
+
+$header-height_d: 70px;
 
 //colors
 $pseudo-black: #303030;
