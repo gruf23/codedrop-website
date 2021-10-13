@@ -238,10 +238,7 @@ function ContactForm() {
         <FileDrop className={styles.files} onDrop={fileDropHandler} onRemove={fileRemoveHandler} filesList={files}/>
       </div>
       <p className={styles.disclaimer}>
-        By ticking the checkboxes and confirming with “Get Started” you agree with processing your
-        personal data for the purpose of entering a pre-contractual relationship. For more
-        information on how we are committed to protect and respect your privacy, please check
-        our <Link href={'/privacy-policy'} target={'_blank'}>Privacy Policy</Link> of Codedrop.
+        I have read and am aware of my user rights in the processing of personal data as outlined in the <Link href={'/privacy-policy'} target={'_blank'}>Privacy Policy</Link> of Codedrop.
       </p>
       <BlueBorderedButton className={styles.button} processing={processing} onClick={submitHandler}>
         Get Started
