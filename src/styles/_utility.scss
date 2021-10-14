@@ -4,8 +4,12 @@ $baseFontSize: 18px;
 
 //grid sizes
 $base-content-width: 1440px;
-$gutter-width: 24px;
-$column-width: math.div(($base-content-width - $gutter-width * 11), 12);
+$gutter-width: 1.6667%; //24px
+$column-width: 6.8056%; // 98px
+
+$media-tablet-max: 1024px;
+$media-mobile-max: 768px;
+$media-mobile-median: 591px;
 
 $four-columns: $column-width * 4 + $gutter-width * 3;
 $six-columns: $column-width * 6 + $gutter-width * 5;
