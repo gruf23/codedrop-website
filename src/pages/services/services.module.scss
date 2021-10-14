@@ -13,6 +13,25 @@
   width: auto;
 }
 
+.bgShape2 {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  z-index: -1;
+}
+.bgShape3 {
+  position: absolute;
+  left: 0;
+  top: 65%;
+  z-index: -1;
+}
+.bgShape4 {
+  position: absolute;
+  right: 0;
+  top: 70%;
+  z-index: -1;
+}
+
 .first {
   text-align: center;
   min-height: calc(80vh - #{$header-height_d});
@@ -103,4 +122,24 @@
   font-size: rem(16px);
   color: #818181;
   line-height: 1.5;
+}
+
+.contact {
+  width: 100%;
+  max-width: $eight-columns;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: rem(56px);
+  h2 {
+    margin-bottom: rem(32px);
+  }
+}
+
+.sub {
+  font-weight: 600;
+  color: rgba($pseudo-black, .7);
+  letter-spacing: rem(1.12px);
+  line-height: rem(23px);
+  text-transform: uppercase;
+  margin-bottom: rem(8px);
 }

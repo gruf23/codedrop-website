@@ -2,7 +2,11 @@ import styles from './services.module.scss';
 
 import BgShape1 from '../../components/BgShapes/BgShape1';
 import BgShapeBottom from '../../components/BgShapes/BgShapeBottom';
+import BgTriangleBigRight from '../../components/BgShapes/BgTriangleBigRight';
+import BgTriangleSmallLeft from '../../components/BgShapes/BgTriangleSmallLeft';
 import cx from 'classnames';
+
+import ContactForm from '../../components/ContactForm';
 
 const data = [
   {
@@ -99,6 +103,9 @@ function HomePage() {
   return (
     <div className={styles.content}>
       <BgShape1 classNames={styles.bgShape}/>
+      <BgTriangleBigRight classNames={styles.bgShape2} />
+      <BgTriangleSmallLeft classNames={styles.bgShape3} />
+      <BgTriangleBigRight classNames={styles.bgShape4} />
 
       <section className={styles.first}>
         <h1>Bespoke software development solutions <br/><span>for your business</span></h1>
@@ -109,7 +116,7 @@ function HomePage() {
         <div>
           <a href="#development">development</a>
           <a href="#design">design</a>
-          <a href="#cloud-devops">cloud & devops</a>
+          <a href="#servers">cloud & devops</a>
           <a href="#support">support</a>
         </div>
       </section>
@@ -137,6 +144,12 @@ function HomePage() {
           )
         })
       }
+
+      <section className={styles.contact}>
+        <span className={styles.sub}>work with us</span>
+        <h2>Contact Us</h2>
+        <ContactForm />
+      </section>
 
       <BgShapeBottom/>
     </div>

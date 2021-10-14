@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="87px" height="207px" viewBox="0 0 87 207" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rectangle Copy</title>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Services" transform="translate(0.000000, -2430.000000)" fill="#F4F4F4">
+            <g id="bg-v1" transform="translate(-454.953625, 0.000000)">
+                <path d="M74.9536252,2317 L482.953625,2317 C505.045015,2317 522.953625,2334.90861 522.953625,2357 L522.953625,2578 C522.953625,2600.09139 505.045015,2618 482.953625,2618 L74.9536252,2618 C52.8622352,2618 34.9536252,2600.09139 34.9536252,2578 L34.9536252,2357 C34.9536252,2334.90861 52.8622352,2317 74.9536252,2317 Z" id="Rectangle-Copy" transform="translate(278.953625, 2467.500000) rotate(45.000000) translate(-278.953625, -2467.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
