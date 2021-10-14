@@ -19,10 +19,10 @@ function Navigation(props) {
   return (
     <nav className={classList}>
       <Link href="/">Home</Link>
-      <Link href="#">About</Link>
+      <Link href={'/services'}>About</Link>
       <Link href={'/collection'}>Collection</Link>
       <Link href={'/contact'}>Contact</Link>
-      <Link href="#">Carrer</Link>
+      {/*<Link href="#">Carrer</Link>*/}
     </nav>
   );
 }
