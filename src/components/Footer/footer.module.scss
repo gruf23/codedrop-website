@@ -8,7 +8,7 @@
   padding-top: rem(142px);
 }
 .content {
-  padding: 10px 20px 25px;
+  padding: rem(10px) rem(20px) rem(25px);
   width: 100%;
   max-width: $base-content-width;
   margin-left: auto;
@@ -102,4 +102,19 @@
   text-transform: capitalize;
   margin-bottom: rem(5px);
   font-weight: 600;
+}
+
+@media screen and (max-width: $media-mobile-max) {
+  .content {
+    flex-wrap: wrap;
+  }
+  .nav {
+    order: 0;
+    width: 100%;
+    margin-bottom: rem(32px);
+  }
+}
+
+@media screen and (max-width: $media-mobile-median) {
+
 }

@@ -2,7 +2,7 @@ import styles from './header.module.scss';
 import Navigation from '../Navigation';
 import Link from 'next/link'
 
-function Index() {
+function Header() {
   return (
     <header className={styles.header}>
       <Link href="/">
@@ -13,4 +13,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Header;
