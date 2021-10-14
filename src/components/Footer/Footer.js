@@ -12,17 +12,17 @@ function Footer() {
             <p>© 2020 All Rights Reserved, Codedrop</p>
             <p><Link href={'/privacy-policy'}>Privacy Policy</Link></p>
           </div>
-          <div className={styles.socials}>
-            <a href="https://example.com/" target="_blank">
-              <img src='/images/icons/github.svg' alt="Our github"/>
-            </a>
-            <a href="https://example.com/" target="_blank">
-              <img src='/images/icons/behance.svg' alt="Our behance"/>
-            </a>
-            <a href="https://example.com/" target="_blank">
-              <img src='/images/icons/instagram.svg' alt="Our instagram"/>
-            </a>
-          </div>
+          {/*<div className={styles.socials}>*/}
+          {/*  <a href="https://example.com/" target="_blank">*/}
+          {/*    <img src='/images/icons/github.svg' alt="Our github"/>*/}
+          {/*  </a>*/}
+          {/*  <a href="https://example.com/" target="_blank">*/}
+          {/*    <img src='/images/icons/behance.svg' alt="Our behance"/>*/}
+          {/*  </a>*/}
+          {/*  <a href="https://example.com/" target="_blank">*/}
+          {/*    <img src='/images/icons/instagram.svg' alt="Our instagram"/>*/}
+          {/*  </a>*/}
+          {/*</div>*/}
         </div>
         <Navigation dir={'vertical'} align={'right'} classes={styles.nav}/>
         <div className={styles.emails}>
