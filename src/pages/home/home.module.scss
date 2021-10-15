@@ -47,7 +47,7 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  max-width: $base-content-width - $column-width * 2;
+  max-width: 100% - $column-width * 2;
   padding-top: rem(40px);
   margin: 0 auto;
   h2 {

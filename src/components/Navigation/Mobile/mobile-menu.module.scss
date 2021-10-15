@@ -1,0 +1,19 @@
+.hamburger {
+  z-index: 11;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 10;
+}
+
+.enterDone {
+  display: flex;
+}

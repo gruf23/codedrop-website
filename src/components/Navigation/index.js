@@ -11,6 +11,7 @@ import cx from 'classnames';
  */
 function Navigation(props) {
   const classList = cx(
+    props.className,
     styles.nav,
     styles[props.dir],
     styles[props.align],
