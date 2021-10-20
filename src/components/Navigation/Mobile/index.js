@@ -7,6 +7,11 @@ import styles from './mobile-menu.module.scss';
 
 function MobileMenu() {
   const [isOpen, setOpen] = useState(false);
+
+  const onNav = () => {
+    setOpen(false)
+  }
+
   return (
     <>
       <div className={styles.hamburger}>
@@ -16,7 +21,7 @@ function MobileMenu() {
         enterDone: styles.enterDone
       }}>
         <RemoveScroll className={styles.menu} enabled={isOpen}>
-          <Navigation align={'center'} dir={'vertical'}/>
+          <Navigation align={'center'} dir={'vertical'} onClick={onNav}/>
         </RemoveScroll>
       </CSSTransition>
     </>
