@@ -105,6 +105,10 @@
 }
 
 @media screen and (max-width: $media-mobile-max) {
+  .footer {
+    display: flex;
+    align-items: flex-end;
+  }
   .content {
     flex-wrap: wrap;
   }

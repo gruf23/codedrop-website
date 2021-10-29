@@ -12,7 +12,6 @@ function Footer() {
     window.addEventListener('resize', () => {
       setScreenWidth(window.innerWidth)
     });
-    console.log(screenWidth)
   }, () => {
     window.removeEventListener('resize');
   });
@@ -20,9 +19,6 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
-        {screenWidth < 768 &&
-          <Navigation dir={'vertical'} align={'center'} classes={styles.nav}/>
-        }
         <div>
           <img className={styles.logo} src="/images/cd-logo-horizontal.svg" alt="CodeDrop"/>
           <div className={styles.terms}>

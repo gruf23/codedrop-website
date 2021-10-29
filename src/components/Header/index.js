@@ -12,7 +12,6 @@ function Header() {
     window.addEventListener('resize', () => {
       setScreenWidth(window.innerWidth)
     });
-    console.log(screenWidth)
   }, () => {
     window.removeEventListener('resize');
   });
