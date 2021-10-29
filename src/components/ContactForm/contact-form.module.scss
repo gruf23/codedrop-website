@@ -70,3 +70,19 @@
 .button {
   margin-top: rem(32px);
 }
+
+@media screen and (max-width: $media-mobile-max) {
+  .button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: $media-mobile-median) {
+  .wHalf {
+    width: 100%;
+  }
+  .legendHolder {
+    margin-top: 1.5rem;
+  }
+}
